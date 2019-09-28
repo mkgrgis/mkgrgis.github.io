@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Бирюлёвский дендропарк</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="js/geoalbum.css" rel="stylesheet" type="text/css">
+	<link href="Бирюлёвский дендропарк.css" rel="stylesheet" type="text/css">
+	<style>
+		.history {
+			margin: 4px 0 1em 2em;
+			padding: 3px;
+			float: right;
+			background: #eee;
+		}
+	</style>
+	<link rel="stylesheet" href="js/leaflet.css" />
+	<script src="js/leaflet.js"></script>
+	<script src="js/leaflet-providers.js"></script>
+	<script src="js/osmtogeojson.js"></script>
+	
+	<script src="leaflet-bing-layer.js"></script>
+
+	<script src="js/geoalbum.js"></script>
+	<script src="js/gpx.js"></script>
+	<script language="javascript">
+		marsch1 = new L.GPX(
+			'Бирюлёвский дендропарк 1-й проход.gpx', 
+			{
+				async: true,
+				marker_options: {
+					startIconUrl: '',
+					endIconUrl: '',
+					shadowUrl: ''
+				}
+			});
+		marsch1.bindPopup(marsch1._info.desc ? detailLayer._info.desc : 'Маршрут 1-й фотопрогулки по Дендропарку')
+
+		marsch2 = new L.GPX(
+			'Бирюлёвский дендропарк 2-й проход.gpx', 
+			{
+				async: true,
+				marker_options: {
+					startIconUrl: '',
+					endIconUrl: '',
+					shadowUrl: ''
+				}
+			});
+		marsch2.bindPopup(marsch2._info.desc ? detailLayer._info.desc : 'Маршрут 2-й фотопрогулки по Дендропарку')
+
+		// Загрузка фотографий из облака по наведению мыши
+		function imgLoaded(img) {
+			img = img.currentTarget;
+			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "geoAlbum0")
+				img.src = 'https://cloclo3.datacloudmail.ru/weblink/thumb/xw1/4nCW/YmUMdE1RG' + '/' + img.getAttribute('data-src');
+			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "geoAlbum1")
+				img.src = 'https://cloclo3.datacloudmail.ru/weblink/thumb/xw1/9uoA/s5Du3c5LA' + '/' + img.getAttribute('data-src');
+			var pn = img.parentNode;
+			if (pn.nodeName == "A" && !pn.getAttribute('href'))
+				pn.setAttribute('href', img.src);
+		};
+	</script>
+</head>
+
+<body>
+	<p>Демонстрация возможностей открытой и свободной <a href="https://github.com/mkgrgis/geoAlbum">программы
+"Географический альбом"</a>, размещённой по адресу <a href="https://github.com/mkgrgis/geoAlbum">https://github.com/mkgrgis/geoAlbum</a></p>
+	<h1>Первый маршрут по Бирюлёвскому Дендропарку (2016 г.)</h1>
+	<div id="geoAlbum0" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
+		<div>1
+			<h1>Бирюлёвский дендропарк - шедевр советского паркостроения</h1>
+			<p>
+				<div><a href="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"><img src="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"></a></div>Дендропарк
+				создан в 1938 г. на месте бирюлёвской пожарной пустоши как парк-питомник. Инженер - дендролог Всеволод
+				Константинович Полозов обратился в Отдел лесопаркового хозяйства Московского городского совета с предложением
+				создать питомник декоративных деревьев и кустарников, который одновременно стал бы и парком общественного
+				назначения. Организовывался питомник с целью получения посадочного материала для других лесопарков и испытания в
+				наших условиях новых, ценных в декоративном отношении экзотических пород. Здесь было высажено 188 видов, сортов и
+				форм древесно-кустарниковой растительности на 505 маточных площадках, проложена дорожная сеть, устроено три
+				водоёма.
+			</p>
+			<p>Площадь исторического дендропарка - 104 га.</p>
+			<p>Суммарная площадь с 5-м кварталом Бирюлёвского лесопарка и прочими прилегающими к денропарку природными
+				территориями - около 135,3 га.</p>
+			<p>В коллекции дендропарка - представители флоры Европы, Азии и Северной Америки. В настоящее время всего около 250
+				видов, в том числе редкие для Москвы экзоты: сосна кедровая сибирская и Веймутова, пихта сибирская и одноцветная,
+				лжетсуга Мензиса, береза бумажная, бархат амурский, белая акация, аралия маньчжурская, скумпия, дейция шершавая,
+				виноград прибрежный и др.</p>
+			<p>С 2002 по 2008 гг. на территории двух участков дендропарка проведено создание экспозиции хвойных. Осенью 2010 г.
+				создана экспозиция «роща сакуры».</p>
+			<p>В 2012 г. проведено благоустройство 5-го квартала Бирюлёвского лесопарка с созданием дорожно-тропиночной сети,
+				деревянных мостов через овраги, цветников, площадок для тихого отдыха, газонов. В 2013-2014 гг. создана
+				велодорожка.</p>
+			<p>На площади 33 га произрастают насаждения естественного происхождения, представленные породами: сосна, дуб, клён,
+				вяз, липа, берёза, осина, тополь. Преобладают березняки.</p>	
+		</div>
+
+		<div>2
+			<h1>Главный парадный вход в Дендропарк</h1>
+			<p>На подходах</p>
+			<div osm_nd_id="3191709066"><a><img class="h_foto" data-src="P1060890.JPG" /></a></div>
+			<p>Входные ворота, установленные в 2015 году</p>
+			<div osm_nd_id="786620407"><a><img class="h_foto" data-src="P1060891.JPG" /></a></div>
+			<p>Спуск в долину Бирюлёвского ручья</p>
+			<div osm_nd_id="429955105"><a><img class="h_foto" data-src="P1060892.JPG" /></a></div>
+			<p>Мыс Утиного пруда</p>
+			<div lon="37.673090100288384" lat="55.59638628966582"><a><img class="h_foto" data-src="P1060893.JPG" /></a></div>
+			</p>Утиный пруд с Берёзовой аллеи</p>
+			<div osm_rl_id="6629999"><a><img class="h_foto" data-src="P1060895.JPG" /></a></div>
+			<p>Дальняя заваодь Утиного пруда. (Из панорамио)</p>
+			<p>Интересен 19 комментарий к этому фото на панорамио.</p>
+			<div><a href="http://www.panoramio.com/photo/95903367"><img src="http://static.panoramio.com/photos/medium/95903367.jpg"></a></div>
+		</div>
+
+		<div>3
+			<h1>Перекрёсток, встречающий на Берёзовой аллее</h1>
+			<p>Берёзовая аллея на подходе к Утиному пруду.</p>
+			<p>Видно нагромождение знаков.</p>
+			<div osm_w_id="390844873"><a><img class="h_foto" data-src="P1060894.JPG" /></a></div>
+
+			</p>Тополевая аллея была проложена вблизи границы исторического дендрария для замыкания видов внутрь дендропарка.</p>
+			<p> Вид на юг.</p>
+			<div osm_w_id="390844886"><a><img class="h_foto" data-src="P1060898.JPG" /></a></div>
+			<p> Вид на север.</p>
+			<div osm_w_id="89233623"><a><img class="h_foto" data-src="P1060899.JPG" /></a></div>
+			<p>Аллея без названия, продолжающаяся терновой аллеей.</p>
+			<div osm_w_id="130999241"><a><img class="h_foto" data-src="P1060900.JPG" /></a></div>
+			<p>Берёзовая аллея</p>
+			<div osm_w_id="390844887"><a><img class="h_foto" data-src="P1060897.JPG" /></a></div>
+			<p>Поворот с Берёзовой аллеи к мостику и Туевой аллее</p>
+			<div osm_nd_id="1033678370"><a><img class="h_foto" data-src="P1060901.JPG" /></a></div>
+		</div>
+
+		<div>4
+			<h1>Большая туевая аллея</h1>
+
+			<p>Вид мостика через центральный овраг. 2011 год. (Из Панорамио)</p>
+			<p>Реконструирован взамен существовавшего мостика в начале 2000-х годов.</p>
+			<div osm_nd_id="1035402700"><a href="http://www.panoramio.com/photo/58440010"><img src="http://static.panoramio.com/photos/medium/58440010.jpg"></a></div>
+
+			<p>Вид от мостика</p>
+			<div osm_w_id="390841758"><a><img class="h_foto" data-src="P1060904.JPG" /></a><a><img class="h_foto" data-src="P1060906.JPG" /></a></div>
+			<p>Маточная площадка одной из разновидностей сосен</p>
+			<div lon="37.6752895116806" lat="55.59741075373086"><a><img class="h_foto" data-src="P1060907.JPG" /></a></div>
+			<p>Тропинка у маточной площадки.</p>
+			<div lon="37.6752895116806" lat="55.59747440298248"><a><img class="h_foto" data-src="P1060908.JPG" /></a></div>
+			<p>Потери на Туевой аллее.</p>
+			<div osm_w_id="390841755"><a><img class="h_foto" data-src="P1060909.JPG" /></a></div>
+			<p>Начало Крушиновой аллеи.</p>
+			<p>Обратите внимание на характерный вяз и заростающий лужок слева.</p>
+			<div osm_w_id="441920580"><a><img class="h_foto" data-src="P1060910.JPG" /></a></div>
+
+			<div osm_w_id="89210064"><a><img class="h_foto" data-src="P1060911.JPG" /></a></div>
+		</div>
+
+		<div>5
+			<h1>В гостях у Малого Истукана</h1>
+			<p>Малый Истукан вряд ли был деревом, которое тут росло. Ни лиственицы, ни ели не дают таких веток. Каштаны
+				поизрастают в другом месте. Фигурка предположительно вырезана в 1980-х годах.</p>
+			<p><br></p>
+			<p>Малый истукан. Парадное фото.</p>
+			<div osm_nd_id="4003820288"><a><img class="h_foto" data-src="P1060912.JPG" /></a></div>
+			<p>Вид на Крушиновую аллею назад.</p>
+			<div osm_w_id="89210064"><a><img class="h_foto" data-src="P1060915.JPG" /></a></div>
+			<p>Начало Большой Еловой аллеи.</p>
+			<p>Один из самых известных и растиражированных ракурсов Дендропарка. "Рука" Малого Истукана видна справа.</p>
+			<div osm_w_id="27333907"><a><img class="h_foto" data-src="P1060914.JPG" /></a></div>
+
+			<div osm_w_id="441920582"><a><img class="h_foto" data-src="P1060913.JPG" /></a></div>
+		</div>
+
+		<div>6
+			<h1>У бывшей Вязовой аллеи</h1>
+			<p>Мор вязов произошёл между 2000 и 2012 годами. Кора ослабших дереьев была атакована жуками.</p>
+			<p>Последние вязы дендропарка.</p>
+			<div osm_w_id="89095867"><a><img class="v_foto" data-src="P1060916.JPG" /></a></div>
+			<p>Остатки вязовой аллеи в сторону к прудику.</p>
+			<div osm_w_id="390841288"><a><img class="v_foto" data-src="P1060917.JPG" /></a></div>
+			<p>Еловая аллея в сторону Туевого круга.</p>
+			<div osm_w_id="390841289"><a><img class="h_foto" data-src="P1060918.JPG" /></a></div>
+
+			<p>Перекрёсток в 2008 году. Вид в сторону Малого Истукана. (Из Панорамио)</p>
+			<div osm_nd_id="1033678338"><a href="http://www.panoramio.com/photo/2791193"><img src="http://static.panoramio.com/photos/medium/2791193.jpg"></a></div>
+		</div>
+
+		<div>7
+			<h1>Туевая площадь</h1>
+			<p>Одна из наиболее красивых композиций дендропарка с загадочной историей. В 1878 году карты отмечали похожую
+				композицию на месте новой пейзажной части дендрария.</p>
+			<div osm_nd_id="1560647707"><a><img class="h_foto" data-src="P1060919.JPG" /></a></div>
+			<div osm_nd_id="1560647725"><a><img class="h_foto" data-src="P1060920.JPG" /></a></div>
+			<div osm_nd_id="1560647729"><a><img class="h_foto" data-src="P1060925.JPG" /></a></div>
+			<p>Большая липовая аллея была проложена с соблюдением всех норм для дорог местного значения в 1930-х годах.</p>
+			<div osm_w_id="142604045"><a><img class="h_foto" data-src="P1060921.JPG" /></a></div>
+			<p>Большая Липовая аллея 3 июня 1984 года.</p>
+			<div osm_nd_id="1033678277"><a href="https://pastvu.com/p/36378"><img src="https://pastvu.com/_p/d/0/c/e/0ce6ee5e10770078a1535c3cf6d2af9d.jpg"></a></div>
+			<p>Берёзовая аллея на восток.</p>
+			<p>Тяжёлые урны (установлены в 2016 году) испорили вид и стали доминировать в нижней части.</p>
+			<div osm_w_id="142691721"><a><img class="h_foto" data-src="P1060922.JPG" /></a></div>
+			<p>Берёзовая аллея на запад. (Из Панорамио)</p>
+			<div osm_w_id="36975719"><a href="http://www.panoramio.com/photo/95903341"><img src="http://static.panoramio.com/photos/medium/95903341.jpg"></a></div>
+			<p>Большая Липовая аллея (Из Панорамио)</p>
+			<div o_sm_w_id="390839990"><a href="http://www.panoramio.com/photo/96703072"><img src="http://static.panoramio.com/photos/medium/96703072.jpg"></a></div>
+			<p>Туевая площадь с Еловой аллеи</p>
+			<div osm_nd_id="1561205526"><a><img class="h_foto" data-src="P1060926.JPG" /></a></div>
+		</div>
+
+		<div>8
+			<h1>Между двумя площадьми дендропарка</h1>
+			<p>На Большой Еловой аллее почти в самой её середине есть интересный перекрёсток...</p>
+			<p>Туевая тропа</p>
+			<p>С этой строны тропа наиболее сильтно пострадала от февральского обледенения 2011 года. Видны молодые туи,
+				посаженные на место умерших.</p>
+			<div osm_w_id="390840001"><a><img class="h_foto" data-src="P1060927.JPG" /></a></div>
+			<p>Малая липовая аллея к полю</p>
+			<p>Аллея никогда до 2015 года не была асфальтирована.</p>
+			<div osm_w_id="390839999"><a><img class="v_foto" data-src="P1060928.JPG" /></a></div>
+			<p>Малая липовая аллея к Берёзовой аллее</p>
+			<div osm_w_id="36975715"><a><img class="v_foto" data-src="P1060929.JPG" /></a></div>
+		</div>
+
+		<div>9
+			<h1>Малая площадь</h1>
+			<p>Вторая из двух площадок пересечения аллей, оформленная в круговую площадь.</p>
+			<p><br></p>
+
+			<p>Последние ясени дендропарка</p>
+			<div osm_w_id="142603356"><a><img class="v_foto" data-src="P1060930.JPG" /></a></div>
+			<p>Еловая аллея с малого круга</p>
+			<div osm_w_id="390839995"><a><img class="v_foto" data-src="P1060932.JPG" /></a></div>
+			<p>Робиниевая аллея в сторону Берёзовой</p>
+			<div osm_w_id="142603357"><a><img class="v_foto" data-src="P1060933.JPG" /></a></div>
+			<p>Конец Рябиновой аллеи</p>
+			<div osm_w_id="441920588"><a><img class="v_foto" data-src="P1060934.JPG" /></a></div>
+			<p>Робиниевая аллея в сторону лесничества</p>
+			<div osm_w_id="89202308"><a><img class="v_foto" data-src="P1060935.JPG" /></a></div>
+			<p>Конец Большой Еловой аллеи</p>
+			<div osm_w_id="142603358"><a><img class="v_foto" data-src="P1060936.JPG" /></a></div>
+		</div>
+
+		<div>10
+			<h1>Окраинный перекрёсток дендропарка</h1>
+			<p>Здесь Пихтовая аллея переходит в одну часть окраинной, а другая часть окраинной переходит в Большую Еловую.</p>
+			<p>Панорама с сайта Панорамио. Слева направо: окраинная аллея к Сакуровой роще, Пихтовая аллея, Еловая аллея,
+				окраинная аллея исторического дендрария. Аллеи с покрытием впервые асфальтированы не позднее 1980-х.</p>
+			<div osm_nd_id="429955109"><a href="http://www.panoramio.com/photo/22914893"><img src="http://static.panoramio.com/photos/original/22914893.jpg"></a></div>
+
+			<p>Потери на Пихтовой аллее</p>
+			<div lon="37.68239200115204" lat="55.59388866754225"><a><img class="v_foto" data-src="P1060937.JPG" /></a></div>
+			<div lon="37.68185019493103" lat="55.59374620129352"><a><img class="v_foto" data-src="P1060938.JPG" /></a></div>
+			<p>Окраинная аллея исторического Дендрария</p>
+			<div osm_w_id="390818409"><a><img class="v_foto" data-src="P1060939.JPG" /></a></div>
+			<p>Здесь заканчивается аллея Сакуровой рощи</p>
+			<div osm_nd_id="1033687249"><a><img class="h_foto" data-src="P1060941.JPG" /></a></div>
+		</div>
+
+		<div>11
+			<h1>В Сакуровой роще в выходной день</h1>
+			<p>Выходной день</p>
+
+			<div><a><img class="h_foto" data-src="P1060942.JPG" /></a></div>
+			<div osm_nd_id="4176341437"><a><img class="h_foto" data-src="P1060943.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060944.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060945.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060946.JPG" /></a></div>
+			<div osm_nd_id="4195819383"><a><img class="h_foto" data-src="P1060947.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060948.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060949.JPG" /></a></div>
+
+			<div><a><img class="h_foto" data-src="P1060950.JPG" /></a></div>
+			<div osm_nd_id="4176341428"><a><img class="h_foto" data-src="P1060951.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060953.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1060954.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060955.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1060956.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1060957.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060958.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060959.JPG" /></a></div>
+
+			<div><a><img class="h_foto" data-src="P1060960.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060961.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060962.JPG" /></a></div>
+			<p>Парадный вид с закладным камнем Мияниси Ютака</p>
+			<div osm_nd_id="4432988831"><a><img class="h_foto" data-src="P1060963.JPG" /></a></div>
+			<p>Взгляд на Сакуровую рощу от лесничества</p>
+			<div osm_nd_id="1035278923"><a><img class="h_foto" data-src="P1060965.JPG" /></a></div>
+		</div>
+
+		<div>12
+			<h1>Вокруг лесничества</h1>
+			<p>Вольеры местного зоопарка</p>
+			<div osm_nd_id="4407307638"><a><img class="h_foto" data-src="P1060966.JPG" /></a></div>
+			<p>Колонка. Сейчас вода отводится по подземным трубам из того же места.</p>
+			<div osm_nd_id="1075938184"><a><img class="h_foto" data-src="P1060969.JPG" /></a></div>
+			<p>Дорожка на участке камерных композиций.</p>
+			<div osm_w_id="120780593"><a><img class="h_foto" data-src="P1060970.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1060973.JPG" /></a></div>
+			<div osm_w_id="27334088"><a><img class="h_foto" data-src="P1060974.JPG" /></a></div>
+			<div osm_w_id="142605048"><a><img class="v_foto" data-src="P1060975.JPG" /></a></div>
+		</div>
+
+		<div>
+			<h1>Бирюлёвский дендропарк ждёт посетителей!</h1>
+			<p> <a href="http://openstreetmap.ru/#map=16/55.5964/37.6773&layer=MF">Карта с пользовательскими фотографиями</a></p>
+		</div>
+
+	</div>
+	<h1>Второй маршрут по Бирюлёвскому Дендропарку</h1>
+	<div id="geoAlbum1" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
+		<div>1
+			<h2>Дендропарк</h2>
+			<p>
+				<div><a href="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"><img src="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"></a></div>Дендропарк
+				создан в 1938 г. на месте бирюлёвской пожарной пустоши как парк-питомник. Инженер - дендролог Всеволод
+				Константинович Полозов обратился в Отдел лесопаркового хозяйства Московского городского совета с предложением
+				создать питомник декоративных деревьев и кустарников, который одновременно стал бы и парком общественного
+				назначения. Организовывался питомник с целью получения посадочного материала для других лесопарков и испытание с
+				наших условиях новых, ценных в декоративном отношении экзотических пород. Здесь было высажено 188 видов, сортов и
+				форм древесно-кустарниковой растительности на 505 маточных площадках, проложена дорожная сеть, устроено три
+				водоема.
+			</p>
+			<p>Площадь исторического дендропарка - 104 га.</p>
+			<p>Суммарная площадь с 5-м кварталом Бирюлёвского лесопарка и прочими прилегающими к денропарку природными
+				территориями - около 135,3 га.</p>
+			<h2>Официальный неразборчивый план Бирюлёвского Дендропарка</h2>
+			<p></p>
+			<div osm_nd_id="775859946"><a href="http://www.ooptuao.ru/uao_eco/image/?objectId=900"><img src="http://www.ooptuao.ru/uao_eco/image/?objectId=900"></a></div>
+		</div>
+
+		<div>2
+			<h1>Главный парадный вход в Дендропарк</h1>
+			<p>Входные ворота, установленные в 2015 году</p>
+			<div osm_nd_id="786620407"><a><img class="h_foto" data-src="P1070008.JPG" /></a></div>
+		</div>
+
+		<div>3
+			<h1>Перекрёсток, встречающий на Берёзовой аллее</h1>
+			<p>Берёзовая аллея у входа в исторический дендропарк Полозова</p>
+			<div osm_nd_id="4066986885"><a><img class="v_foto" data-src="P1070011.JPG" /></a>
+				<p>1980-е года. Резная композиция у входа в исторический Дендропарк</p>
+				<a href="https://pastvu.com/p/160052"><img src="https://pastvu.com/_p/d/y/p/0/yp0em9betj8yr5mw19.jpg"></a>
+			</div>
+			<p>Большая аллея Венгерской сирени</p>
+			<div osm_w_id="390839996" color="#F2872F"><a><img class="v_foto" data-src="P1070013.JPG" /></a></div>
+			<p>Берёзовая аллея к Центральному прудику</p>
+			<div osm_w_id="390840008" color="#F2872F"><a><img class="v_foto" data-src="P1070014.JPG" /></a></div>
+		</div>
+
+		<div>4
+			<h1>У Центрального прудика</h1>
+			<p>1980-е годы, до постройки гротескового мостика</p>
+			<div osm_nd_id="839230900"><a href="https://pastvu.com/p/157202"><img width="480" height="302" src="https://pastvu.com/_p/d/u/a/l/ual73zgegs4pedei0i.jpg"></a></div>
+			<p>Каштановая аллея</p>
+			<div osm_w_id="390840000" color="#F2872F"><a><img class="v_foto" data-src="P1070015.JPG" /></a></div>
+
+			<p>Начало большой Лиственичной аллеи</p>
+			<div osm_w_id="390841293" color="#F2872F"><a><img class="v_foto" data-src="P1070016.JPG" /></a></div>
+
+			<p>Панорама Центрального прудика и продолжения Берёзовой аллеи</p>
+			<div osm_w_id="391103474" color="#F2872F"><a><img class="h_foto" data-src="P1070017.JPG" /></a></div>
+
+			<p>Центральный прудик с Гротескового моста</p>
+			<div osm_rl_id="6583926" color="#000087"><a><img class="h_foto" data-src="P1070018.JPG" /></a></div>
+
+			<p>Перекрёсток с Рябиновой аллеи. Слева резная скульпптура, прозванная "Большой Истункан". На месте красной кормушки
+				ранее была<a href="https://pastvu.com/p/160053"> другая скульптура</a>, следов которой пока не обнаружено.</p>
+			<div osm_nd_id="300065203"><a><img class="h_foto" data-src="P1070019.JPG" /></a></div>
+
+			<p>Беседка</p>
+			<div osm_w_id="92771800" color="#F2872F"><a><img class="h_foto" data-src="P1070020.JPG" /></a></div>
+
+			<p>Беседка с Рябиновой аллеи</p>
+			<div osm_nd_id="1035278870"><a><img class="h_foto" data-src="P1070022.JPG" /></a></div>
+
+			<p>Гротесковый мостик, построенный в 1980-х</p>
+			<div osm_w_id="70310836" color="#F2872F"><a><img class="h_foto" data-src="P1070021.JPG" /></a></div>
+			<p>Гротесковый мостик и оригинальная беседка 1980-х годов, оставившая фундамент для новой. Самое позднее с конца
+				1990-х годов примерно до 2010 года на месте беседки ничего не было.</p>
+			<div osm_nd_id="839231008"><a href="https://pastvu.com/p/74661"><img width="525" height="347" src="https://pastvu.com/_p/d/0/5/d/05d42d18b3eb1ef8ea62b5ea62533e79.jpg"></a></div>
+		</div>
+
+		<div>4
+			<h1>У перекрёстка Рябиновой и Большой Липовой аллей</h1>
+			<p>Дорожка в старый боскет</p>
+			<div osm_w_id="92771812" color="#F2872F"><a><img class="h_foto" data-src="P1070023.JPG" /></a></div>
+			<p>Большая Липовая аллея к началу</p>
+			<div osm_w_id="27333870" color="#F2872F"><a><img class="v_foto" data-src="P1070024.JPG" /></a></div>
+
+			<p>Большая Липовая аллея к Туевому кругу</p>
+			<div osm_w_id="390839990" color="#F2872F"><a><img class="v_foto" data-src="P1070025.JPG" /></a></div>
+
+			<p>Туевая тропа</p>
+			<div osm_w_id="89202312" color="#F2872F"><a><img class="v_foto" data-src="P1070026.JPG" /></a></div>
+
+			<p>Рябиновая аллея назад</p>
+			<div osm_w_id="390840007" color="#F2872F"><a><img class="v_foto" data-src="P1070027.JPG" /></a></div>
+
+			<p>Маточная площадка сосен кедровых европейских</p>
+			<div lon="37.678481340408325" lat="55.59533451914454"><a><img class="h_foto" data-src="P1070028.JPG" /></a></div>
+
+			<p>Рябиновая аллея к малому кругу</p>
+			<div osm_w_id="89233626" color="#F2872F"><a><img class="v_foto" data-src="P1070029.JPG" /></a></div>
+		</div>
+
+		<div>4
+			<h1>У перекрёстка Кленовой, Рябиновой и <br>Малой Липовой аллей</h1>
+
+			<p>Перекрёсток</p>
+			<div osm_nd_id="300064808" color="#F2872F"><a><img class="h_foto" data-src="P1070030.JPG" /></a></div>
+			<p>Пузыреплодовниковая аллея</p>
+			<div osm_w_id="441920585" color="#00FF00"><a><img class="v_foto" data-src="P1070031.JPG" /></a></div>
+			<p>Площадка хвойных камерных экспозиций в 1977 году, когда она была полем.</p>
+			<div osm_rl_id="6579118" color="#F2872F"><a href="https://pastvu.com/p/186253"><img width="525" height="347" src="https://pastvu.com/_p/a/2/d/5/2d5i503uuk78qk0nrd.jpg"></a></div>
+			<p>Рябиновая аллея к Центральному прудику</p>
+			<div osm_w_id="89233626" color="#F2872F"><a><img class="v_foto" data-src="P1070032.JPG" /></a></div>
+			<p>Кленовая аллея у Туевому кругу</p>
+			<div osm_w_id="142691733" color="#F2872F"><a><img class="v_foto" data-src="P1070033.JPG" /></a></div>
+			<p>Малая Липовая аллея</p>
+			<div osm_w_id="390839999" color="#F2872F"><a><img class="v_foto" data-src="P1070034.JPG" /></a></div>
+			<p>Аллея в сторону лесничества</p>
+			<div osm_w_id="89421731" color="#F2872F"><a><img class="v_foto" data-src="P1070035.JPG" /></a></div>
+			<p>Рябиновая аллея к Малому кругу</p>
+			<div osm_w_id="441920588" color="#F2872F"><a><img class="v_foto" data-src="P1070036.JPG" /></a></div>
+			<p>Самая известная тропинка Дендропарка, которая зимой превращается в лыжню</p>
+			<div osm_w_id="99199064" color="#F2872F"><a><img class="v_foto" data-src="P1070037.JPG" /></a></div>
+		</div>
+
+		<div>5
+			<h1>Малый круг</h1>
+			<p>Подходим по Рябиновой аллее</p>
+			<div osm_w_id="441920588" color="#F2872F"><a><img class="h_foto" data-src="P1070038.JPG" /></a></div>
+			<p>Панорама Малого Круга с Рябиновой аллеи</p>
+			<div osm_rl_id="1929678" color="#FF4444"><a><img class="h_foto" data-src="P1070039.JPG" /></a></div>
+			<p>Конец Большой Еловой аллеи</p>
+			<div osm_w_id="142603358" color="#F2872F"><a><img class="v_foto" data-src="P1070041.JPG" /></a></div>
+			<p>Бывшая Ясеневая аллея</p>
+			<div osm_w_id="142603356" color="#F2872F"><a><img class="v_foto" data-src="P1070042.JPG" /></a></div>
+			<p>Дальний конец Робиниевой аллеи</p>
+			<div osm_w_id="142603357" color="#F2872F"><a><img class="v_foto" data-src="P1070044.JPG" /></a></div>
+			<p>Ближний конец Робиниевой аллеи</p>
+			<div osm_w_id="89202308" color="#F2872F"><a><img class="v_foto" data-src="P1070046.JPG" /></a></div>
+		</div>
+
+		<div>6
+			<h1>На подходах к Сакуровой роще</h1>
+			<p>Аллея пихт</p>
+			<div osm_w_id="89210067" color="#F2872F"><a><img class="v_foto" data-src="P1070047.JPG" /></a></div>
+			<p>Часть окраииной дороги</p>
+			<div osm_w_id="390844876" color="#F2872F"><a><img class="v_foto" data-src="P1070048.JPG" /></a></div>
+			<div osm_nd_id="812948790"><a><img class="h_foto" data-src="P1070049.JPG" /></a></div>
+			<p>В предвкушении!</p>
+			<div osm_nd_id="4167759117"><a><img class="h_foto" data-src="P1070050.JPG" /></a></div>
+		</div>
+
+		<div>7
+			<h1>Цветение Сакуры в роще</h1>
+			<div osm_nd_id="1035278916"><a><img class="h_foto" data-src="P1070051.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070052.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070053.JPG" /></a></div>
+			<div osm_w_id="419538643" color="#F2872F"><a><img class="h_foto" data-src="P1070054.JPG" /></a></div>
+			<div osm_w_id="89431746" color="#F2872F"><a><img class="h_foto" data-src="P1070055.JPG" /></a></div>
+			<div osm_nd_id="1037256461"><a><img class="h_foto" data-src="P1070056.JPG" /></a></div>
+			<div osm_nd_id="4176341423"><a><img class="h_foto" data-src="P1070057.JPG" /></a></div>
+			<div osm_nd_id="4176341424"><a><img class="v_foto" data-src="P1070058.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070059.JPG" /></a></div>
+			<div osm_nd_id="4176341436"><a><img class="h_foto" data-src="P1070062.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070061.JPG" /></a></div>
+			<div osm_nd_id="4176341410"><a><img class="h_foto" data-src="P1070063.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070064.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070065.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070066.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070067.JPG" /></a></div>
+			<div osm_nd_id="4176341415"><a><img class="h_foto" data-src="P1070068.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070069.JPG" /></a></div>
+			<div osm_nd_id="4176341431"><a><img class="h_foto" data-src="P1070070.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070071.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070072.JPG" /></a></div>
+			<div osm_nd_id="4176341428"><a><img class="h_foto" data-src="P1070073.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070075.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070076.JPG" /></a></div>
+			<div osm_nd_id="4176341408"><a><img class="h_foto" data-src="P1070077.JPG" /></a></div>
+			<div osm_nd_id="4176341407"><a><img class="v_foto" data-src="P1070078.JPG" /></a></div>
+			<p>Официальный плакат о Сакуровой роще (2016)</p>
+			<div osm_nd_id="4407307635"><a><img class="v_foto" data-src="P1070079.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070080.JPG" /></a></div>
+			<p>Карта природных территорий юга Москвы</p>
+			<div osm_nd_id="4407307647"><a><img class="v_foto" data-src="P1070081.JPG" /></a></div>
+		</div>
+
+		<div>8
+			<h1>Площадка у Лесничества</h1>
+			<p>Пихтовая аллея</p>
+			<div osm_w_id="89210067" color="#F2872F"><a><img class="v_foto" data-src="P1070092.JPG" /></a></div>
+			<p>Робиниевая аллея к Малому кругу</p>
+			<div osm_w_id="89202308" color="#F2872F"><a><img class="v_foto" data-src="P1070094.JPG" /></a></div>
+			<p>Аллея к Туевому кругу</p>
+			<div osm_w_id="89421731" color="#F2872F"><a><img class="v_foto" data-src="P1070100.JPG" /></a></div>
+			<p>Площадка у Лесничества</p>
+			<div osm_nd_id="4396129008"><a><img class="h_foto" data-src="P1070097.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070105.JPG" /></a></div>
+			<div><a><img class="h_foto" data-src="P1070109.JPG" /></a></div>
+			<p>Поляна у лесничества не позднее 2000-х годов и не ранее 1981 года.</p>
+			<div><a href="https://pastvu.com/p/181047"><img src="https://pastvu.com/_p/d/0/1/l/01lwxyk96ptlvdr7t8.jpg"></a></div>
+
+			<p>Тропинка между площадкой и участком камерных композиций</p>
+			<div osm_w_id="89573294" color="#F2872F"><a><img class="v_foto" data-src="P1070110.JPG" /></a></div>
+		</div>
+
+		<div>9
+			<h1>Участок камерных композиций</h1>
+			<p>С бывшей дендропарковой улицы</p>
+			<div osm_nd_id="1038300881"><a><img class="h_foto" data-src="P1070112.JPG" /></a></div>
+			<p>Входя на одну из дорожек</p>
+			<div osm_w_id="120780593" color="#F2872F"><a><img class="v_foto" data-src="P1070114.JPG" /></a></div>
+			<div osm_nd_id="1353491331"><a><img class="h_foto" data-src="P1070115.JPG" /></a></div>
+			<p>Полуаллея туй западных</p>
+			<div osm_w_id="422173701" color="#F2872F"><a><img class="v_foto" data-src="P1070116.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070118.JPG" /></a></div>
+			<p>Вид на старую маточную площадку</p>
+			<div osm_nd_id="1353491406"><a><img class="h_foto" data-src="P1070117.JPG" /></a><a><img class="h_foto" data-src="P1070136.JPG" /></a></div>
+			<div osm_nd_id="1353491378"><a><img class="v_foto" data-src="P1070119.JPG" /></a></div>
+			<p>Виды на площадку у Лесничества</p>
+			<div osm_nd_id="1353491381"><a><img class="h_foto" data-src="P1070120.JPG" /></a><a>
+					<img class="h_foto" data-src="P1070122.JPG" /></a>
+				<a><img class="h_foto" data-src="P1070123.JPG" /></a></div>
+			<p>Второй пасечный участок, огорожен в 2015</p>
+			<div osm_rl_id="6062297" color="#F2872F"><a><img class="h_foto" data-src="P1070125.JPG" /></a></div>
+			<p>В сторону сиреневой аллеи</p>
+			<div osm_nd_id="1353491362"><a><img class="h_foto" data-src="P1070126.JPG" /></a></div>
+			<div osm_nd_id="1353491320"><a><img class="h_foto" data-src="P1070127.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070129.JPG" /></a></div>
+			<div osm_nd_id="1038300871"><a><img class="h_foto" data-src="P1070130.JPG" /></a></div>
+			<div osm_nd_id="1353491312"><a><img class="h_foto" data-src="P1070131.JPG" /></a></div>
+			<p>Малая лиственичная аллея и её продолжение</p>
+			<div osm_w_id="89573293" color="#F2872F"><a><img class="v_foto" data-src="P1070132.JPG" /></a></div>
+			<div osm_nd_id="1353491403"><a><img class="h_foto" data-src="P1070133.JPG" /></a></div>
+			<div osm_w_id="27334088" color="#F2872F"><a><img class="v_foto" data-src="P1070135.JPG" /></a><a><img class="v_foto"
+					 data-src="P1070137.JPG" /></a></div>
+		</div>
+
+		<div>10
+			<h1>На пути к пейзажной части Дендропарка</h1>
+			<p>Насыпь у Лесничества через Бирюлёвский ручей</p>
+			<div osm_w_id="152426118" color="#F2872F"><a><img class="v_foto" data-src="P1070143.JPG" /></a></div>
+			<p>Его долина в верховьях</p>
+			<div osm_w_id="390844894" color="#F2872F"><a><img class="h_foto" data-src="P1070144.JPG" /></a></div>
+			<p>Первый пруд на ручье</p>
+			<div osm_w_id="89431748" color="#F2872F"><a><img class="h_foto" data-src="P1070146.JPG" /></a></div>
+
+			<p>Он же в 2011 году до постройки заборов и вольера (Из Панорамио)</p>
+			<p>Ныне ракурс недоступен</p>
+			<div lon="37.68019258975983" lat="55.59307629987061" panoramio_id="60673548"></div>
+
+			<p>Мостик в верховьях</p>
+			<div osm_w_id="70091040" color="#F2872F"><a href="http://mospark.ru/parki/parki-moskvy/parki-yuao/biryulevskij-dendropark.html"><img
+					 src="http://mospark.ru/images/phocagallery/birdendr/thumbs/phoca_thumb_l_brdendro2013_09.jpg"></a></div>
+		</div>
+
+		<div>11
+			<h1>Дубовая роща</h1>
+			<div osm_w_id="62198305" color="#F2872F"><a><img class="v_foto" data-src="P1070147.JPG" /></a></div>
+			<div osm_w_id="390818416" color="#F2872F"><a><img class="v_foto" data-src="P1070148.JPG" /></a></div>
+			<div osm_w_id="89203956" color="#F2872F"><a><img class="v_foto" data-src="P1070149.JPG" /></a></div>
+			<div osm_nd_id="4003981217" color="#F2872F"><a><img class="h_foto" data-src="P1070151.JPG" /></a></div>
+			<p>Дуб в ограде, выигравшей конкурс как ограждение точечного природного памятника</p>
+			<div osm_nd_id="3939662367"><a><img class="v_foto" data-src="P1070153.JPG" /></a></div>
+			<div><a><img class="v_foto" data-src="P1070154.JPG" /></a></div>
+			<div osm_w_id="63525905" color="#F2872F"><a><img class="v_foto" data-src="P1070150.JPG" /></a></div>
+			<p>Один из дубов в сторону Берёзовой рощи</p>
+			<div osm_nd_id="3939662367"><a><img class="v_foto" data-src="P1070155.JPG" /></a></div>
+			<p>Аллея Берёзовой рощи пересекает границу дубовых и берёзовых посадок</p>
+			<div osm_w_id="89203332" color="#F2872F"><a><img class="v_foto" data-src="P1070156.JPG" /></a></div>
+		</div>
+
+		<div>12
+			<h1>Берёзовая роща</h1>
+			<p>Аллея Берёзовой рощи</p>
+			<div osm_w_id="89203332" color="#F2872F"><a><img class="v_foto" data-src="P1070157.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070163.JPG" /></a></div>
+			<p>Аллея Берёзовой рощи пересекает границу дубовых и берёзовых посадок</p>
+			<div><a><img class="v_foto" data-src="P1070159.JPG" /></a></div>
+			<div osm_rl_id="6602332" color="#F2872F"><a><img class="h_foto" data-src="P1070160.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070161.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070164.JPG" /></a></div>
+			<p>Конец аллеи Берёзовой рощи. Здесь примерно до 1999 года был мост через овражек, который был разобран по ветхости
+				и до сих пор не восстановлен.</p>
+			<div osm_nd_id="1563289747"><a><img class="v_foto" data-src="P1070162.JPG" /></a>
+				<a><img class="h_foto" data-src="P1070165.JPG" /></a></div>
+		</div>
+
+		<div>13
+			<h1>У бывшей Дендропарковой улицы</h1>
+			<p>Пруд Шоколадка</p>
+			<div osm_rl_id="6594364" color="#F2872F"><a><img class="h_foto" data-src="P1070167.JPG" /></a>
+				<a><img class="h_foto" data-src="P1070168.JPG" /></a></div>
+			<p>Высокий берег и бетонные столбы старой ограды исторического дендрария</p>
+			<div osm_nd_id="1035297021"><a><img class="h_foto" data-src="P1070169.JPG" /></a></div>
+			<p>Бывшая Дендропарковая улица</p>
+			<div osm_w_id="390841291" color="#F2872F"><a><img class="v_foto" data-src="P1070170.JPG" /></a></div>
+			<p>Аллея Венгерской сирени</p>
+			<div osm_w_id="89202310" color="#F2872F"><a><img class="v_foto" data-src="P1070171.JPG" /></a></div>
+			<p>Перекрытая дорожка в выходу</p>
+			<div osm_w_id="142605049" color="#F2872F"><a><img class="v_foto" data-src="P1070172.JPG" /></a></div>
+			<p>Тополевая аллея</p>
+			<div osm_w_id="390844886" color="#F2872F"><a><img class="v_foto" data-src="P1070173.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070174.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070175.JPG" /></a>
+				<a><img class="v_foto" data-src="P1070176.JPG" /></a></div>
+		</div>
+
+		<div>
+			<h1>Бирюлёвский дендропарк ждёт посетителей!</h1>
+			<p> <a href="http://openstreetmap.ru/#map=16/55.5964/37.6773&layer=MPF">Карта с пользовательскими фотографиями</a></p>
+			<p>Бывшая Дендропарковая улица ночью</p>
+			<div osm_nd_id="775860363"><a><img class="h_foto" data-src="P1070003.JPG" /></a></div>
+		</div>
+
+	</div>
+	<p>OSM ...</p>
+	<script language="javascript">
+		function functionGrH(div)
+		{			
+			return div.getElementsByTagName('h1')[0].textContent;
+		}
+
+		function functionImgH(div)
+		{			
+			var n =div.previousElementSibling;
+			return  n.textContent;
+		}
+
+		// Автоматическая обработка картинок, помеченных к загрузке из облачного хранилища
+		function autoProcessImg (div){
+			for( var divChRD, cRD = 0; cRD < div.childNodes.length; cRD++ ){
+				ChRD = div.childNodes[cRD];
+				if( ChRD.nodeType == 1 && ChRD.localName != 'script' ){
+					var images = ChRD.getElementsByTagName('img');
+					for( var k = 0; k < images.length; k++ ){
+						var img = images[k];
+						if (img.hasAttribute('data-src')){
+							img.src = 'web/null.png';
+							if (typeof imgLoaded != 'undefined'){
+								img.onmouseover = imgLoaded;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		function gLayer (l){/*				
+			h = roads only
+			m = standard roadmap
+			p = terrain
+			r = somehow altered roadmap
+			s = satellite only
+			t = terrain only
+			y = hybrid	*/
+			return L.tileLayer(
+				'http://{s}.google.com/vt/lyrs=' + l + '&x={x}&y={y}&z={z}',
+				{
+					maxZoom: 20, 
+					subdomains:['mt0','mt1','mt2','mt3']
+				}
+			);
+		}
+
+		var a0 = document.getElementById('geoAlbum0');
+		autoProcessImg(a0);
+		a0.GA = new geoAlbum(a0, {
+			groupMapZ: JSON.parse( a0.getAttribute('groupMapZoom')),
+			imageMapZ: JSON.parse( a0.getAttribute('imageMapZoom')),	
+			functionImgH : functionImgH,
+			functionGrH : functionGrH,
+			imageMapProvider : [
+				'Esri.WorldImagery', 
+				'OpenTopoMap', 
+				'OpenStreetMap.Mapnik', 
+				new L.tileLayer.bing('AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L'),
+				gLayer('p'),
+				gLayer('s'),
+				gLayer('y'),
+				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+				{maxZoom: 28, attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +	                'Imagery © <a href="http://mapbox.com">Mapbox</a>',	 id: 'mapbox.streets'})
+				],
+			imageMapName : ['Снимки от Esri', 'Топографическая карта', 'ОСМ/Мапник', 'Bing', 'Карта g1', 'Спутник g2', 'Гибрид g3', 'MapBox'],
+			contur: {
+				osm_relation_id : 5851116,
+				title : "Территория Бюрюлёвского Дендропарка",
+				color : "#F2872F",
+				subAreas : true,
+				subAreasColor: "#99CF19"
+				},
+			routeLayer : marsch1,
+			routeStyle : {color: '#80ffff', opacity: 0.5},
+			locale : {
+				prevText : '&larr; Предыдущее',
+				nextText : 'Следующее &rarr;',
+				imIndices : 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ'
+				},		
+			activeGroupColor : 'red',
+			passiveGroupColor : 'grey',
+			activeImageColor : 'blue',
+			passiveImageColor : 'grey'
+		}
+		);	// Альбом 0 объявлен	
+		var a1 = document.getElementById('geoAlbum1');
+		autoProcessImg(a1);
+		a1.GA = new geoAlbum(a1, {
+			groupMapZ: JSON.parse( a1.getAttribute('groupMapZoom')),
+			imageMapZ: JSON.parse( a1.getAttribute('imageMapZoom')),	
+			functionImgH : functionImgH,
+			functionGrH : functionGrH,
+			imageMapProvider : ['Esri.WorldImagery', 'OpenTopoMap', 'OpenStreetMap.Mapnik'],
+			imageMapName : ['Снимки от Esri', 'Топографическая карта', 'ОСМ/Мапник'],
+			contur: {
+				osm_relation_id : 5851116,
+				title : "Территория Бюрюлёвского Дендропарка",
+				color : "#F2872F",
+				subAreas : true,
+				subAreasColor: "#99CF19"
+				},
+			routeLayer : marsch2,
+			routeStyle : {color: '#80ffff', opacity: 0.5},
+			locale : {
+				prevText : '&larr; Назад',
+				nextText : 'Вперёд &rarr;',
+				imIndices : 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ'
+				}
+		}
+		);	// Альбом 1 объявлен
+
+		document.onkeydown = function (e) { // Клавиатурой управляется только альбом 0
+			var GA = document.getElementById('geoAlbum0').GA;
+			if (e.which == 39)
+				GA.focusGroup(GA.geoDivIdx + 1);
+			if (e.which == 37)
+				GA.focusGroup(GA.geoDivIdx - 1);
+			// location.hash = GA.geoDivIdx+1;
+		}
+
+/* Panoramio R.I.P
+function addPanoramioRef ( div, photo_info ){
+	var a = document.createElement('a');
+	a.href = photo_info.photo_url;
+	a.id = photo_info.photo_id;
+	a.title = photo_info.photo_title;
+	a.rel='pano';
+	var img = document.createElement('img');
+	img.src = photo_info.photo_file_url;
+	img.alt = photo_info.photo_title;
+	a.appendChild(img);
+	a.appendChild(document.createElement('br'));
+	var a_auth = document.createElement('a');
+	a_auth.href = photo_info.owner_url;
+	a_auth.innerHTML = 'Автор: ' + photo_info.owner_name ;
+	a.appendChild(a_auth);
+	var p = document.createElement('p');
+	p.innerHTML= 'Дата снимка: ' + photo_info.upload_date + ' ' + ' № снимка: ' + photo_info.photo_id + ' ';
+	a.appendChild(p);
+	div.appendChild(a);
+}
+
+function _img_panoramio_id (panoramio_id, photo_div){
+	var photo_info = {};
+	photo_info.photo_url = 'http://www.panoramio.com/photo/' + panoramio_id;
+	photo_info.photo_id = panoramio_id;
+	photo_info.photo_title = '';
+	photo_info.photo_file_url = 'http://static.panoramio.com/photos/medium/' + panoramio_id + '.jpg'
+	addPanoramioRef (photo_div, photo_info);
+} */
+	</script>
+</body>
+
+</html>

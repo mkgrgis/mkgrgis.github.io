@@ -1,0 +1,34 @@
+.div-p {
+    margin: 1em 0;
+	text-align: justify;
+}
+
+h1 {
+    font-size: 18pt;
+    font-weight: normal;
+}
+
+img {
+    border: 0;
+}
+
+.photo {
+	display: block;
+	border: 2px #00d solid;
+    max-width: 99%;
+    max-height: 99%;
+}
+
+.h_foto {
+	display: block;
+	border: 2px #00d solid;
+    max-width: 99%;
+    max-height: 99%;
+}
+
+.v_foto {
+	display: block;
+	border: 2px #00d solid;
+    max-width: 99%;
+    max-height: 99%;
+}

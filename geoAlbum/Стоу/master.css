@@ -1,0 +1,12 @@
+td{font-family:arial;font-size:14px;}
+.sitemenu{margin:20px;border-top:#CCCCCC 1px solid;}
+.menulevel1{padding:4px 8px 8px 8px;margin:2px 0px 2px 0px;background:url(/images/menuitembg.gif) left bottom no-repeat;}
+.firstlevel{color:#205BA6;text-decoration:none;}
+.secondlevel{color:#666666;text-decoration:none;font-size:12px;}
+.menulevel2{padding:3px 3px 3px 6px;background:url(/images/level2dot.gif) left top no-repeat;}
+h1{margin:0px;font-family:times new roman;font-size:25px;font-weight:normal;}
+h2{margin:20px 0px 0px 0px;font-family:times new roman;font-size:18px;font-weight:normal;}
+a{color:#205BA6;}
+.innertext{margin-top:20px;text-align:justify;font-family:times new roman;font-size:18px;}
+.innertext p{text-align:justify;font-family:times new roman;font-size:18px;}
+.portraitline{margin:10px 0px 0px 0px;}

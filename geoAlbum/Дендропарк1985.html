@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Бирюлёвский дендропарк</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="js/geoalbum.css" rel="stylesheet" type="text/css">
+	<link href="Бирюлёвский дендропарк.css" rel="stylesheet" type="text/css">
+	<style>
+		.history {
+			margin: 4px 0 1em 2em;
+			padding: 3px;
+			float: right;
+			background: #eee;
+		}
+	</style>
+	<link rel="stylesheet" href="js/leaflet.css" />
+	<script src="js/leaflet.js"></script>
+	<script src="js/leaflet-providers.js"></script>
+	<script src="js/osmtogeojson.js"></script>	
+	
+	<script src="leaflet-bing-layer.js"></script>
+
+	<script src="js/geoalbum.js"></script>
+	<script src="js/gpx.js"></script>
+	<script src="js/exif.js"></script>
+	<script language="javascript">
+		marsch1 = new L.GPX(
+			'Бирюлёвский дендропарк 1-й проход.gpx', 
+			{
+				async: true,
+				marker_options: {
+					startIconUrl: '',
+					endIconUrl: '',
+					shadowUrl: ''
+				}
+			});
+		marsch1.bindPopup(marsch1._info.desc ? detailLayer._info.desc : 'Маршрут 1-й фотопрогулки по Дендропарку')
+	</script>
+</head>
+
+<body>
+	<p>Демонстрация возможностей открытой и свободной <a href="https://github.com/mkgrgis/geoAlbum">программы
+"Географический альбом"</a>, размещённой по адресу <a href="https://github.com/mkgrgis/geoAlbum">https://github.com/mkgrgis/geoAlbum</a></p>
+	<h1>Бирюлёвский дендропарк - обзор одной прогулки 1985 года по фото от <a href='https://pastvu.com/u/Sirius_MSK'>Sirius_MSK</a></h1>
+	<div id="geoAlbum0" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
+		<div>1
+			<h1>Введение</h1>
+			<p>
+				<div><a href="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"><img src="https://pp.vk.me/c630631/v630631381/d549/CtI1MQ7XpcM.jpg"></a></div>Дендропарк
+				создан в 1938 г. на месте бирюлёвской пожарной пустоши как парк-питомник. Инженер - дендролог Всеволод
+				Константинович Полозов обратился в Отдел лесопаркового хозяйства Московского городского совета с предложением
+				создать питомник декоративных деревьев и кустарников, который одновременно стал бы и парком общественного
+				назначения. Организовывался питомник с целью получения посадочного материала для других лесопарков и испытания в
+				наших условиях новых, ценных в декоративном отношении экзотических пород. Здесь было высажено 188 видов, сортов и
+				форм древесно-кустарниковой растительности на 505 маточных площадках, проложена дорожная сеть, устроено три
+				водоёма.
+			</p>
+			<p>Площадь исторического дендропарка - 104 га.</p>
+			<p><b> Фотографии предоставлены ув. <a href='https://pastvu.com/u/Sirius_MSK'>Sirius_MSK</a> и в основном опубликованы на ресурсе PastVu.com</b></p>	
+		</div>
+
+		<div>2
+			<h1>Группа фото</h1>
+			<p>Спуск к мосту в отвершке Бирюлёвского оврага</p>
+			<div osm_nd_id="1563289747"><a><img style="width:100%" src="http://158.r.photoshare.ru/01585/00f1eebfca8af821ca38e7cc7cbafa3f28eaf4ec.jpg" /></a></div>
+			<p>Входные ворота, установленные в 2015 году</p>
+			<div osm_nd_id="1563289747"><a><img style="width:100%" src="https://pastvu.com/_p/a/u/2/t/u2tohrcd21xnoqyel0.jpg" /></a></div>
+			<p>Спуск в долину Бирюлёвского ручья</p>
+			<div osm_nd_id="1563289747"><a><img style="width:100%" src="http://158.r.photoshare.ru/01585/00f1eebfca8af821ca38e7cc7cbafa3f28eaf4ec.jpg" /></a></div>
+		</div>
+
+		<div>3
+			<h1>Группа фото</h1>
+			<p>Скамейка на окраинной дороге</p>
+			<div osm_nd_id="775860476"><a><img style="width:100%" src="https://pastvu.com/_p/a/w/d/m/wdmrfkt1g6aimixrzo.jpg" /></a></div>
+      			<p>Спортивный городок</p>
+			<div osm_nd_id="300064565 "><a><img style="width:100%" src="https://pastvu.com/_p/a/m/a/g/magop09g2xqn6c4f37.jpg" /></a></div>
+			<p>На большой липовой аллее, у перекрёстка с северно - восточной</p>
+			<div osm_nd_id="817064287"><a><img style="width:100%" src="https://pastvu.com/_p/a/d/i/w/diw3ltr9lmcy7yoaj3.jpg" /></a></div>
+		</div>
+		<div>
+			<h1>Бирюлёвский дендропарк ждёт посетителей!</h1>
+			<p> <a href="http://openstreetmap.ru/#map=16/55.5964/37.6773&layer=MF">Карта с пользовательскими фотографиями</a></p>
+		</div>
+	</div>
+	<p>OSM ...</p>
+	<script language="javascript">
+		function functionGrH(div)
+		{			
+			return div.getElementsByTagName('h1')[0].textContent;
+		}
+		function functionImgH(div)
+		{			
+			var n =div.previousElementSibling;
+			return  n.textContent;
+		}
+		function gLayer (l){/*				
+			h = roads only
+			m = standard roadmap
+			p = terrain
+			r = somehow altered roadmap
+			s = satellite only
+			t = terrain only
+			y = hybrid	*/
+			return L.tileLayer(
+				'http://{s}.google.com/vt/lyrs=' + l + '&x={x}&y={y}&z={z}',
+				{
+					maxZoom: 20, 
+					subdomains:['mt0','mt1','mt2','mt3']
+				}
+			);
+		}
+		var a0 = document.getElementById('geoAlbum0');		
+		a0.GA = new geoAlbum(a0, {
+			groupMapZ: JSON.parse( a0.getAttribute('groupMapZoom')),
+			imageMapZ: JSON.parse( a0.getAttribute('imageMapZoom')),	
+			functionImgH : functionImgH,
+			functionGrH : functionGrH,
+			imageMapProvider : [
+				'Esri.WorldImagery', 
+				'OpenTopoMap', 
+				'OpenStreetMap.Mapnik', 
+				new L.tileLayer.bing('AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L'),
+				gLayer('p'),
+				gLayer('s'),
+				gLayer('y'),
+				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+				{maxZoom: 28, attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +	                'Imagery © <a href="http://mapbox.com">Mapbox</a>',	 id: 'mapbox.streets'})
+				],
+			imageMapName : ['Снимки от Esri', 'Топографическая карта', 'ОСМ/Мапник', 'Bing', 'Карта g1', 'Спутник g2', 'Гибрид g3', 'MapBox'],
+			exif_geo: false,
+			contur: {
+				osm_relation_id : 5851116,
+				title : "Территория Бюрюлёвского Дендропарка",
+				color : "#F2872F",
+				subAreas : true,
+				subAreasColor: "#99CF19"
+				},
+			routeLayer : marsch1,
+			routeStyle : {color: '#80ffff', opacity: 0.5},
+			locale : {
+				prevText : '&larr; Предыдущее',
+				nextText : 'Следующее &rarr;',
+				imIndices : 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ'
+				},		
+			activeGroupColor : 'red',
+			passiveGroupColor : 'grey',
+			activeImageColor : 'blue',
+			passiveImageColor : 'grey'
+		}
+		);	// Альбом 0 объявлен	
+	
+		document.onkeydown = function (e) { // Клавиатурой управляется только альбом 0
+			var GA = document.getElementById('geoAlbum0').GA;
+			if (e.which == 39)
+				GA.focusGroup(GA.geoDivIdx + 1);
+			if (e.which == 37)
+				GA.focusGroup(GA.geoDivIdx - 1);
+			// location.hash = GA.geoDivIdx+1;
+		}
+	</script>
+</body>
+
+</html>

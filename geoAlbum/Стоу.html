@@ -1,0 +1,1615 @@
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Сады и время - 10. Весь мир - пейзаж. Прогулка по Стоу (1)</title>
+	<link rel="stylesheet" type="text/css" href="Стоу/master.css">
+
+	<link href="js/geoalbum.css" rel="stylesheet" type="text/css">
+	<style>
+		.history {
+			margin: 4px 0 1em 2em;
+			padding: 3px;
+			float: right;
+			background: #eee;
+		}
+	</style>
+	<link rel="stylesheet" href="js/leaflet.css" />
+	<script src="js/leaflet.js"></script>
+	<script src="js/leaflet-providers.js"></script>
+	<script src="js/osmtogeojson.js"></script>
+	<script src="js/gpx.js"></script>
+	<script src="js/geoalbum.js"></script>
+</head>
+
+<body color="#000000" bgcolor="#FFFFFF">
+	<h2 style="color:#FF0000"> Внимание! Это немного доработанный пример страницы <a href="http://www.gardenhistory.ru/page.php?pageid=398">http://www.gardenhistory.ru/page.php?pageid=398</a>,
+		куда были добавлены возможности открытой и свободной <a href="https://github.com/mkgrgis/geoAlbum">программы
+			"Географический альбом"</a>, размещённой по адресу <a href="https://github.com/mkgrgis/geoAlbum">https://github.com/mkgrgis/geoAlbum</a>
+	</h2>
+	<p> Повторно опубликовано здесь с разрешения автора, Б. М. Соколова </p>
+	<table cellspacing="0" cellpadding="0" border="0" align="center">
+		<tbody>
+			<tr>
+				<td colspan="3" style="background:#F8FCF5;">
+					<div style="border:#D4E69E 1px solid;padding:2px;">
+						<div style="height:125px;background:url(Стоу/toppic.jpg);border:#99CF19 1px solid;padding:1px;">
+							<a href="http://www.gardenhistory.ru/"><img src="Стоу/logo.gif" alt="" style="margin:20px;" width="246" height="75"
+								 border="0"></a><br>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="background:#F8FCF5;" width="256" valign="top">
+					<div class="sitemenu">
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=432" class="firstlevel">ПРОЕКТ "САДЫ
+								И ВРЕМЯ - ИТОГИ 2018 ГОДА</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=389" class="firstlevel">САДОВЫЙ
+								СПЕКТАКЛЬ: ИСКУССТВО ПЕЙЗАЖНОГО ПАРКА В ЕВРОПЕ И РОССИИ // ВЫШЕЛ АЛЬБОМ-КАТАЛОГ</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=443" class="firstlevel">ПАРК
+								В БОГОРОДИЦКЕ: ОТ ЗАМЫСЛА К ВОПЛОЩЕНИЮ // ГИМ, 19.01.19, 18.15 ВХОД
+								СВОБОДНЫЙ - ХХХХ встреча семинара "История культурного ландшафта"</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=1" class="firstlevel">Что такое САДЫ
+								И ВРЕМЯ?</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=346" class="firstlevel">Я стараюсь
+								понять сад как пространство жизни и культуры... // Интервью журналу МИР МУЗЕЯ</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=419" class="firstlevel">В ПОИСКАХ
+								РАЙСКОГО САДА... // Лекция на телеканале "Дождь"</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=2" class="firstlevel">Хроника</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=353" class="firstlevel">Наши
+								маршруты</a>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=354" class="secondlevel">Парки
+									Франции и Германии - осеннее ландшафтное путешествие // Европа, 3-15.10.09 / Фотоочерки Бориса Соколова</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=372" class="secondlevel">За
+									Владимирской стариной с лицеистами РГГУ // 5-7.11.09 / Фотоочерк Бориса Соколова</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=386" class="secondlevel">От
+									Спасского-Лутовинова до Богородицка // май 2010 // Фотоочерк Елены Лапенко</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=390" class="secondlevel">Сады и
+									парки Англии - осеннее ландшафтное путешествие // 2-9 октября 2010 / Фотоочерки Бориса Соколова </a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=450" class="secondlevel">Ландшафтные
+									новости Тульской и Калужской областей // 26-28.07 и 03-04.08.2013 / Фотоочерки Бориса Соколова</a></div>
+						</div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=237" class="firstlevel">Конференции
+								и семинары</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=344" class="firstlevel">ДНЕВНИК -
+								Новая жизнь старого сада, или Отдых восставших масс</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=90" class="firstlevel">Landshaftov.Rossii.net?
+								- Угрозы и утраты</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=280" class="firstlevel">САДЫ И ВРЕМЯ
+								в Живом Журнале</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=8" class="firstlevel">Книги,
+								журналы, медиа</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=3" class="firstlevel">Образование и
+								путешествия</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=10" class="firstlevel">Садовый
+								алфавит (* ) [готовы буквы А - Ж]</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=67" class="firstlevel">История
+								садового искусства</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=60" class="firstlevel">Проекты</a>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=61" class="secondlevel">Научно-образовательный
+									центр "Сады и время"</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=65" class="secondlevel">"Любовное
+									борение во сне Полифила" (*)</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=63" class="secondlevel">"Антология
+									садовой литературы" (*)</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=66" class="secondlevel">Сады
+									Серебряного века: Литература. Живопись. Архитектура (*)</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=130" class="secondlevel">"Английская
+									плантомания Екатерины Великой" (*)</a></div>
+							<div class="menulevel2"><a href="http://www.gardenhistory.ru/page.php?pageid=176" class="secondlevel">"Взято из
+									сочинений Г. Гиршфельда": "Теория садового искусства" и русское Просвещение (*)</a></div>
+						</div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=56" class="firstlevel">Портреты
+								садов</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=76" class="firstlevel">Библиотека
+								садовой литературы</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=84" class="firstlevel">Библиотека
+								научных работ</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=115" class="firstlevel">Письма о
+								садах</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=247" class="firstlevel">Ландшафтный
+								репортаж</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=151" class="firstlevel">Садовая
+								галерея</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=267" class="firstlevel">Гуманитарный
+								университет</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=91" class="firstlevel">Об авторе</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=92" class="firstlevel">Наши партнеры</a></div>
+						<div class="menulevel1"><a href="http://www.gardenhistory.ru/page.php?pageid=93" class="firstlevel">Приглашение к
+								сотрудничеству</a></div> <img src="Стоу/saturn9.gif"><br>
+					</div>
+				</td>
+				<td width="90%" valign="top">
+					<div style="padding:20px;width:98%;">
+						<div style="margin-bottom:20px;">
+							<a href="http://www.gardenhistory.ru/">www.gardenhistory.ru</a> :
+							<a href="http://www.gardenhistory.ru/page.php?pageid=353">Наши маршруты</a> :<a href="http://www.gardenhistory.ru/page.php?pageid=390">Сады
+								и парки Англии - осеннее ландшафтное путешествие // 2-9 октября 2010 / Фотоочерки Бориса Соколова </a> : </div>
+						<h1>10. Весь мир - пейзаж. Прогулка по Стоу (1)</h1>
+						<div class="innertext" id="album1" groupMapZoom='{"ini" : "14", "min" : "7", "max" : "16" }' imageMapZoom='{"ini" : "16", "min" : "15", "max" : "21" }'>
+							<div>								
+								<div coordinates=" [ -1.0143738985061646, 52.029736218705516  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5700.jpg" target="large5700img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5700small.jpg" alt="Стоу. Елисейские поля. Памятник Доблестным британцам" width="597"
+														 height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Памятник Доблестным британцам</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Собрать зачарованную и восхищенную группу в Раушеме было нелегко.
+									Даже двух часов на этот небольшой, но поистине замечательный парк
+									оказалось мало. И мне даже стало казаться, что восторги исчерпались, и
+									на Стоу их – заслуженных! – почти не осталось. Полчаса пути – и мы
+									как-то незаметно&nbsp;подъехали к могучим предместьям крупного имения –
+									прямые дороги, решетка, выгнутый каменный мост, мощные
+									павильоны-сторожки. И вот открылись пейзажные дали и стоящий над ними
+									великолепный дворец. <br>
+									<br>
+								</p>
+								<div coordinates=" [
+								-1.0184669494628906,
+								52.030300595713754
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5701.jpg" target="large5701img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5701small.jpg" alt="Стоу. Парковый фасад дворца" width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Парковый фасад дворца</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Стоу – огромное старинное овцеводческое поместье, расположенное
+									неподалеку от городка Бакингем. Именно доходы от имения позволили
+									семейству Темплов построить здесь сначала замок, а потом дворец. Фасады
+									солнечного цвета простираются на триста метров – правда, боковые части
+									скрыты деревьями, - а число комнат достигало четырехсот. Дом вписан в
+									ландшафт еще архитекторами XVII века, причем с исключительным
+									мастерством: сдержанный северный фасад смотрит на плоский парковый
+									пейзаж с полями и пастбищами, а торжественный южный высится над зеленым
+									склоном, в конце которого блестят воды озера. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0178285837173462,
+								52.0310068820514
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5702.jpg" target="large5702img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5702small.jpg" alt="Стоу. Вид от дворца на партер, Восьмигранное озеро и Триумфальную арку"
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Вид от дворца на партер, Восьмигранное озеро и Триумфальную арку</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Дальше расстилается широкий ровный луг, усеянный белыми точками овец,
+									затем местность повышается гребнем, и на нем стоят огромные воздушные
+									ворота – Триумфальная арка. И это еще не все! </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:625px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5703.jpg" target="large5703img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5703small.jpg" alt="Стоу. Планировка ансамбля и его связь с городом Бакингем. Снимок со спутника. Схема Б. Соколова"
+														 width="625" height="335" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Планировка ансамбля и его связь с городом Бакингем. Снимок со спутника.
+													Схема Б. Соколова</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Дорога от арки, прямая как стрела, ведет через поля прямо в центр
+									Бакингема, зримо связывая Темплов со столицей графства. Ричард Темпл,
+									наш главный герой, соорудил на собственные деньги общественное здание,
+									дабы показать свое влияние. По воле случая зданием этим оказалась
+									городская тюрьма... <br>
+									<br>
+								</p>
+								<div coordinates=" [
+								-1.0178714990615845,
+								52.031086091038404
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5705.jpg" target="large5705img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5705small.jpg" alt="Стоу. Вид от дворца - Елисейские поля за стеной деревьев, в просвет видна Колонна Гренвиля"
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Вид от дворца - Елисейские поля за стеной деревьев, в просвет видна
+													Колонна Гренвиля</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Поскольку семейство владело живописной территорией, на которой
+									отращивали шерсть тысячи овец, именно здесь впервые в эпоху Просвещения
+									был создан образец "украшенной фермы". Теоретики пейзажного парка в
+									начале XVIII столетия утверждали, что гибрид сельскохозяйственных угодий
+									с красивой усадьбой уже осуществлен во Франции. Это была самая
+									настоящая пропаганда. Во Франции таких усадеб не было, но англичанам
+									очень хотелось создавать не пейзажные сады, а целые живописные пейзажи. </p>
+								<p>&nbsp;</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:330px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-6154.jpg" target="large6154img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-6154small.jpg" alt="Ж.-Б. Ван Лоо. Ричард Темпл, виконт Кобэм" width="330" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Ж.-Б. Ван Лоо. Ричард Темпл, виконт Кобэм</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Стоу стал местом приложения сил всего "пейзажного движения"
+									1710-1740-х годов. Его владелец - Ричард Темпл, виконт Кобэм – был не
+									только военачальником, связанным с герцогом Мальборо (для него в эти
+									годы архитектора Ванбру строил усадьбу Бленем). Темпл был
+									парламентарием, убежденным вигом, масоном (больше по моде, чем по
+									убеждениям) и членом клуба Кит-Кэт. </p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:195px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-6153.jpg" target="large6153img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-6153small.jpg" alt="Томас Мюррей. Сэр Джон Ванбру"
+														 width="195" height="250" border="0"></a></td>
+												<td style="width:200px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-6155.jpg" target="large6155img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-6155small.jpg" alt="Уильям Эйкман. Портрет Уильяма Кента"
+														 width="200" height="248" border="0"></a></td>
+												<td style="width:184px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-6156.jpg" target="large6156img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-6156small.jpg" alt="Натаниэль Дэнс. Портрет Ланселота Брауна"
+														 width="184" height="250" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:195px;">Томас Мюррей. Сэр Джон Ванбру</td>
+												<td style="font-size:10px;width:200px;">Уильям Эйкман. Портрет Уильяма Кента</td>
+												<td style="font-size:10px;width:184px;">Натаниэль Дэнс. Портрет Ланселота Брауна</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>В круг его светских знакомств входили архитектор и драматург Джон
+									Ванбру, теоретик искусства Джозеф Аддисон, лорд Берлингтон и – что
+									важнее всего для судьбы ансамбля – члены его кружка, "садовый художник"
+									Кент и поэт Александер Поуп. Именно они произвели пейзажную революцию в
+									одной отдельно взятой английской усадьбе. <br>
+								</p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:625px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5706.jpg" target="large5706img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5706small.jpg" alt="Стоу. План имения эпохи Чарлза Бриджмена: бастионы, канал, Всьмигранное озеро. 1720е"
+														 width="625" height="270" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. План имения эпохи Чарлза Бриджмена: бастионы, канал, Всьмигранное озеро.
+													1720е</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<p></p>
+								<p>Великие работы начались в 1711 году и продолжались около тридцати
+									лет. Вспоминается история Версаля, сады которого Людовик XIV велел
+									переделывать по нескольку раз, добиваясь нового величия и стиля. Прежний
+									скромный сад был превращен в обширный парк, захватывающий территорию
+									нынешнего озера и водного каскада. Эта работа Чарлза Бриджмена хорошо
+									известна по серии гравюр – ровный наклонный партер, "итальянские"
+									длинные пруды с лодками и дальними перспективами, на центральной оси -
+									Октогон, восьмигранный пруд со столбом, извергающим воду. Интересным
+									решением Бриджмена было оформление границ парка – стена "ах-ах" по углам
+									дополнена полукруглыми бастионами. Полковник Кобем жил словно в большой
+									зеленой крепости. Бриджмен работал в Стоу до 1735 года, а в 1720-х
+									несколько проектов для парка по дружески выполнил Ванбру. </p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:275px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5708.jpg" target="large5708img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5708small.jpg" alt="Стоу. Пирамида Ванбру. Гравюра Жака Риго. 1730-е"
+														 width="275" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5707.jpg" target="large5707img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5707small.jpg" alt="Царское Село. Пирамида"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:275px;">Стоу. Пирамида Ванбру. Гравюра Жака Риго. 1730-е</td>
+												<td style="font-size:10px;width:268px;">Царское Село. Пирамида</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Очень жаль, что исчезла высокая Пирамида, поставленная им недалеко от
+									главной оси. Время отняло у Стоу около тридцати павильонов, но этот был
+									особенным. Во-первых, Кобэм посвятил его памяти архитектора, умершего в
+									1726 году. Во-вторых, пирамида Ванбру поразила воображение российской
+									императрицы, и она пожелала построить такой же – сохранившийся! –
+									памятник древним временам в Царском Селе. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0196793079376218,
+								52.0288054761498
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:299px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5709.jpg" target="large5709img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5709small.jpg" alt="Стоу. Вид Западного сада" width="299" height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Вид Западного сада</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<br>
+								Парк Бриджмена мог казаться новым и эффектным в начале пейзажной
+								революции, когда барочные формы и итальянские открытые перспективы с
+								лугами и полями были огромным новшеством (вспомним Хемптон Корт с его
+								замкнутыми садами и жесткими линиями аллей). После ухода из жизни
+								Бриджмена Кобэм с друзьями решают, что нужно двигаться дальше. Наступает
+								звездный час Уильяма Кента. Советуясь с кругом своих друзей-заказчиков,
+								он вырабатывает великий "натуральный" план для все еще слишком
+								регулярного и слишком легко обозримого парка. Стоу из единого открытого
+								пространства превращается в череду индивидуальных сцен и обособленных
+								художественных миров. <p></p>
+								<p></p>
+								<div coordinates=" [
+								-1.013708710670471,
+								52.02973951917658
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:134px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5714.jpg" target="large5714img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5714small.jpg" alt="Стоу. Памятник Доблестным британцам. Бюст Александра Поупа" width="134"
+														 height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Памятник Доблестным британцам. Бюст Александра Поупа</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								Новому Стоу посвящен проникновенный поэтический трактат – <a href="http://www.gardenhistory.ru/page.php?pageid=139">"Послание
+									к лорду Берлингтону" Александера Поупа</a>.
+								Оно был столь дорог поэту, что работа над ним продолжалась с момента
+								публикации в 1731 году до самой смерти поэта. Эти прекрасные стихи не
+								переводились на русский, и я сделал свой перевод. В англоязычном мире
+								эти стихи стали хрестоматийными. На следующий день мы встретились с
+								"Посланием" в Стоурхеде, где двустишия поэта поместили на дощечках прямо
+								среди пейзажей! Именно в этом стихотворении Поуп бросил крылатую фразу –
+								"Consult the Genius of the Place in all" - "Во всем советуйся с гением
+								места": <br>
+								<br>
+								<font color="#333399">Consult the genius of the place in all; <br>
+									That tells the waters or to rise, or fall, <br>
+									Or helps th"ambitious hill the heavens to scale, <br>
+									Or scoops in circling theatres the vale; <br>
+									Calls in the country, catches opening glades, <br>
+									Joins willing woods, and varies shades from shades; <br>
+									Now breaks, or now directs, th"intending lines, <br>
+									Paints as you plant, and as you work, designs. <br>
+									<br>
+									Пусть гений места даст тебе совет; <br>
+									Тот, кто потока направляет след, <br>
+									Иль гордый холм поднимет до небес, <br>
+									Иль обратит в театр уступов дольних срез; <br>
+									Мелькнет в селе, займет полян широкий вид, <br>
+									Соединит леса, а краски оттенит; <br>
+									То разорвет, а то направит линий строй, <br>
+									Художник рощ твоих, работ твоих герой. <br>
+									<br>
+								</font>Кент превращает "зеленый ковер", ниспадавший к восьмигранному
+								озеру, в подобие луга, окруженного мягкими формами могучих деревьев. <p></p>
+								<p></p>
+								<div coordinates="[
+								-1.0156774520874023,
+								52.02765357290113
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5710.jpg" target="large5710img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5710small.jpg" alt="Стоу. Вид на дворец от Восьмигранного озера. Слева только что посаженная Спящая роща"
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Вид на дворец от Восьмигранного озера. Слева только что посаженная Спящая
+													роща</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Классический фасад в обрамлении "естественных" посадок производит
+									сильное впечатление, особенно издалека, от озера или Триумфальной арки.
+									На месте водного восьмигранника с фонтаном теперь разливается спокойное
+									озеро, а пруды и каналы сменяются дикими каскадами и ручьями. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0149908065795898,
+								52.027722885969965
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5711.jpg" target="large5711img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5711small.jpg" alt="Стоу. Бывшее Восьмигранное озеро и Триумфальная арка" width="597"
+														 height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Бывшее Восьмигранное озеро и Триумфальная арка</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Именно это имел в виду Поуп: </p>
+								<p>
+									<font color="#333399">The vast parterres a thousand hands shall make, <br>
+										Lo! COBHAM comes, and floats them with a lake. <br>
+										<br>
+										Партеров ширину готовят сотни рук, <br>
+										Но КОБЭМ повелел! и озеро вокруг.</font> <br>
+									<br>
+									Стоу – коллективное творение, и Коринфская арка, завершающая великий
+									вид, создана уже после ухода из жизни Кента и Кобэма, по проекту
+									дилетанта - Томаса Питта, племянника владельца и известного политика.
+								</p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5712.jpg" target="large5712img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5712small.jpg" alt="" width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Ощущение грандиозного масштаба возникает у зрителя потому, что от
+									колоннады дворца до самой арки нет ни одной архитектурной или иной
+									преграды. За зеленым склоном и озером идет незаметное отсюда ах-ах, а за
+									ним колоссальный луг, обрамленный темными древесными кулисами и плавно
+									поднимающийся к арке. Три километра от въезда до порога дома, и все они
+									отданы пейзажному виду! </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5713.jpg" target="large5713img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5713small.jpg" alt="Стоу. Триумфальная арка на расстоянии двух километров. Видны обрамляющие ее колонны"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Триумфальная арка на расстоянии двух километров. Видны обрамляющие ее
+													колонны</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Летом луг усеян белыми фигурками овец. Арка не служит въездом –
+									поворот ведет к боковой дороге, скрытой деревьями. Прекрасный пример
+									непрерывной сцены, "скрытых границ", воспетых Поупом: <br>
+									<br>
+									<font color="#333399">He gains all points, who pleasingly confounds, <br>
+										Surprises, varies, and conceals the bounds. <br>
+										<br>
+										Тот выиграл у всех, кто завлечет игрою, <br>
+										Подменит, удивит, и рубежи сокроет. <br>
+									</font><br>
+									Наше знакомство с парком началось с посещения дворца, точнее, его
+									центрального купольного зала (здание занимает частная привилегированная
+									школа). Этот зал не просто красив – он является центром всей усадьбы.
+								</p>
+								<p></p>
+								<div coordinates=" [
+								-1.0176193714141846,
+								52.03041941101835
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5715.jpg" target="large5715img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5715small.jpg" alt="Стоу. На партере ученики школы Стоу играют в гольф" width="597" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. На партере ученики школы Стоу играют в гольф</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p></p>
+								<div coordinates=" [
+								-1.0180377960205078,
+								52.03126101038764
+							  ]">
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5716.jpg" target="large5716img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5716small.jpg" alt="Стоу. Вид из купольного зала дворца на север..."
+														 width="268" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5717.jpg" target="large5717img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5717small.jpg" alt="...и в парк"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:268px;">Стоу. Вид из купольного зала дворца на север...</td>
+												<td style="font-size:10px;width:268px;">...и в парк</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Двери с обеих сторон зала были распахнуты, соединяя две пейзажных
+									сцены. В одну сторону открывается вид на озеро и Триумфальную арку, в
+									другую – на двор, конную статую короля Георга и пейзажные поля. Мне
+									кажется, что такие залы шириной весь дом – находка пейзажной эпохи. </p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:134px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5718.jpg" target="large5718img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5718small.jpg" alt="Стоу. Световой купол дворца недавно отреставрирован"
+														 width="134" height="200" border="0"></a></td>
+												<td style="width:134px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5719.jpg" target="large5719img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5719small.jpg" alt="Стоу. Двери в парк"
+														 width="134" height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:134px;">Стоу. Световой купол дворца недавно отреставрирован</td>
+												<td style="font-size:10px;width:134px;">Стоу. Двери в парк</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Ни в Версале, ни в Хемптон Корте, ни в Царском Селе подобного
+									сквозного вида нет, а в Павловске виды сквозь анфиладу комнат, причем
+									через крупные панорамные окна, предусмотрены. И воздух парка
+									продолжается в воздухе дворца. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:533px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5720.jpg" target="large5720img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5720small.jpg" alt="Стоу. Скамья в портике дворца для любования пейзажем. Фото Елены Лапенко"
+														 width="533" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Скамья в портике дворца для любования пейзажем. Фото Елены Лапенко</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Если смотреть от дома на арку, удобно представить себе те сцены,
+									отдельные "сады", которыми славен Стоу. Эти названия не официальные, но
+									устоявшиеся – внимательный посетитель легко убеждается в существовании и
+									обособленности этих сцен. </p>
+								<p>&nbsp;</p>
+								<div coordinates=" [
+								-1.0192018747329712,
+								52.02842591245447
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5721.jpg" target="large5721img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5721small.jpg" alt="Стоу. Западный сад с Ротондой Венеры" width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Западный сад с Ротондой Венеры</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Справа находится Западный сад, открытая местность со множеством памятников разным родам и оттенкам любви.
+								</p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5722.jpg" target="large5722img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5722small.jpg" alt="Стоу. Ротонда Венеры"
+														 width="268" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5723.jpg" target="large5723img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5723small.jpg" alt=""
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:268px;">Стоу. Ротонда Венеры</td>
+												<td style="font-size:10px;width:268px;"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>В центре склона расположена эффектная ротонда со статуей Венеры, и
+									ниже, за потоком – подковообразный Храм Венеры с античной надписью над
+									входом "Пусть полюбит нелюбивший, кто любил, пусть любит вновь". </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0164445638656616,
+								52.0273301104927
+							  ]">
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:300px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5724.jpg" target="large5724img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5724small.jpg" alt="Стоу. Пещера Дидоны. Фото Б. Соколова. 1996. Видны первоначальные гладкие стены"
+														 width="300" height="196" border="0"></a></td>
+												<td style="width:300px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5762.jpg" target="large5762img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5762small.jpg" alt="Стоу. Пещера Дидоны. Гравюра из книги Джорджа Бикема Красоты Стоу (1750)"
+														 width="300" height="188" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:300px;">Стоу. Пещера Дидоны. Фото Б. Соколова. 1996. Видны первоначальные
+													гладкие стены</td>
+												<td style="font-size:10px;width:300px;">Стоу. Пещера Дидоны. Гравюра из книги Джорджа Бикема Красоты Стоу
+													(1750)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Рядом, в зарослях кустарника притаился мой любимый павильон – Пещера
+									Дидоны. Когда-то там была видна надпись, рассказывающая о приключениях
+									героев "Энеиды" Вергилия: "Видны в пещере, где успели скрыться, // Герой
+									Троян с Тирийскою царицей". Стоу уже в эпоху Просвещения стал настолько
+									популярен, что для его посетителей были выпущены первые в Англии
+									садовые путеводители. В одном из них я нашел надписи и пояснения (здесь
+									они даются в моем переводе), в другом – "картинки", старинные
+									изображения павильонов и колонн. Так вот, на иллюстрации из ранней эпохи
+									Стоу "Пещера" – просто павильон с гладкими стенами и арочным входом.
+									Этот условный грот в середине XVIII века стал казаться во всех
+									отношениях неестественным – и его обложили грубыми кусками пористого
+									известняка. Именно таким я обнаружил его в свой первый приезд, в 1994
+									году. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5725.jpg" target="large5725img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5725small.jpg" alt="Стоу. Пещера Дидоны. Фото Б. Соколова. 2010" width="597" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Пещера Дидоны. Фото Б. Соколова. 2010</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>А потом камни стали падать, и началась реставрация, обнажившая
+									прежние ровные стены. Оба состояния этой скромной постройки очень
+									интересны, поэтому фасад решили оставить в "полуразобранном" виде. Таким
+									вот памятником двух эпох "естественности" мы его и увидели. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:299px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5726.jpg" target="large5726img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5726small.jpg" alt="Стоу. Пещера Дидоны. Матерь Любви, Тебя приветствую..." width="299"
+														 height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Пещера Дидоны. Матерь Любви, Тебя приветствую...</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>А над входом написано на латыни: "Матерь Любви, Тебя приветствую". <br>
+									<br>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:625px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5727.jpg" target="large5727img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5727small.jpg" alt="Стоу. Елисейские поля. Снимок со спутника. Схема Б. Соколова" width="625"
+														 height="335" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Снимок со спутника. Схема Б. Соколова</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Между партером и Западным садом у меня была назначена встреча. Барри
+									Смит, главный садовник Стоу, который сажал экзотические деревья в Сонной
+									роще, припомнил мой первый визит. В тот приезд мне посчастливилось жить
+									под крышей Триумфальной арки и изучать усадьбу, расспрашивая всех обо
+									всем. Мы договорились пройтись по парку, чтобы поговорить и увидеть
+									новые посадки. Но пока мы всей группой отправились в мир иной – на
+									Елисейские поля. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0145509243011475,
+								52.029521687564966
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5728.jpg" target="large5728img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5728small.jpg" alt="Стоу. Елисейские поля. Плотина, памятник Доблестным британцам, река Стикс..."
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Плотина, памятник Доблестным британцам, река Стикс...</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Заветное место, шедевр Уильяма Кента расположен параллельно
+									партерному склону, вдоль речки Алдер, и бережно укрыт густыми зарослями
+									высоких деревьев. Прекрасная узкая долина полна солнечного света и
+									одухотворена несколькими храмами, полными глубокого смысла и красоты. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5729.jpg" target="large5729img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5729small.jpg" alt="Стоу. Елисейские поля. Разлив реки и памятник драматургу Уильяму Конгриву"
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Разлив реки и памятник драматургу Уильяму Конгриву</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Это место посвящено памяти и доблестям великих людей далекого и
+									недавнего прошлого, поэтому и настроение создает несколько
+									меланхолическое, а речка названа Стиксом, именем водной границы
+									греческого загробного мира. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.015334129333496,
+								52.03171645755822
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5730.jpg" target="large5730img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5730small.jpg" alt="Стоу. Елисейские поля. Грот Венеры" width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Грот Венеры</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<br>
+								Если вернуться от поэзии к ландшафту, можно увидеть, что Елисейские поля
+								– это лощина с выровненными откосами, из которых тот, что граничит с
+								партером, круче, а дальний, пологий раскрывает следующую садовую сцену.
+								Течение речки замедлено двумя плотинами, верхняя из которых скрывает в
+								себе большой грот. <p></p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:625px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5731.jpg" target="large5731img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5731small.jpg" alt="Стоу. Елисейские поля. Грот Венеры на гравюре середины XVIII века"
+														 width="625" height="399" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Грот Венеры на гравюре середины XVIII века</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Он остался от ранних времен, поэтому полон проемов, барочных эффектов, в нише находится статуя Венеры. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5732.jpg" target="large5732img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5732small.jpg" alt="Стоу. Елисейские поля. Вид из Грота Венеры" width="597" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Вид из Грота Венеры</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Прелестен замшелый вход и в особенности грубая арка, сквозь которую видна почти вся долина. </p>
+								<p></p>
+								<div coordinates=" [
+								-1.0137569904327393,
+								52.0298913405814
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:598px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5733.jpg" target="large5733img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5733small.jpg" alt="Стоу. Елисейские поля. Храм Древних добродетелей и Колонна Гренвиля"
+														 width="598" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Храм Древних добродетелей и Колонна Гренвиля</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<div coordinates=" [
+								-1.0154092311859129,
+								52.02994414790572
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:598px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5736.jpg" target="large5736img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5736small.jpg" alt="Стоу. Елисейские поля. Вид на Памятник Доблестным британцам от Храма Древних добродетелей"
+														 width="598" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Вид на Памятник Доблестным британцам от Храма Древних
+													добродетелей</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<p></p>
+								<p>Главные постройки Елисейских полей бросаются в глаза сразу. Они стоят
+									над рекой, наискосок друг от друга – круглый купольный храмик и
+									подковообразный мемориал со множеством бюстов. Античный храм был
+									посвящен "Древним добродетелям", как показывает и латинская надпись над
+									его входом. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:299px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5734.jpg" target="large5734img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5734small.jpg" alt="Стоу. Храм Древних Добродетелей. Надпись над входом" width="299"
+														 height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних Добродетелей. Надпись над входом</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>У него есть и художественный, и политический смысл. Внутри
+									установлены четыре статуи великих греков – Эпаминонд, Ликург, Сократ и
+									Гомер, два правителя и два деятеля искусств. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5735.jpg" target="large5735img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5735small.jpg" alt="Стоу. Храм Древних Добродетелей. Эпаминонд, Ликург, Сократ" width="597"
+														 height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних Добродетелей. Эпаминонд, Ликург, Сократ</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Надписи (которых в Стоу немало) сделаны в поучение для нынешнего века. Вот как восхваляется Сократ: <br>
+									<br>
+									<font color="#333399">Тот, кто в развратнейшем государстве остался чистым, <br>
+										Насадитель добра, служитель единого БОГА, <br>
+										От бесполезной праздности и тщетных прений <br>
+										К жизненному долгу и общественному благу <br>
+										Философию направил, <br>
+										Муж наимудрейший. <br>
+										<br>
+									</font>С Храмом Древней Добродетели связаны еще две постройки – одна
+									существует и сегодня, от другой остались только камни фундамента. Если
+									заглянуть в заросли деревьев за Храмом, обнаруживается сельская церковь.
+								</p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:598px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5738.jpg" target="large5738img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5738small.jpg" alt="Стоу. Храм Древних добродетелей, справа за деревьями - сельская церковь"
+														 width="598" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних добродетелей, справа за деревьями - сельская церковь</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Здесь была деревня, которую Кобэм перевел в другое место. Церковь он
+									перенести не мог, хотя не прочь был ее сломать, поэтому укрыл ее в гуще
+									деревьев. Кстати, много позже&nbsp;здесь венчался начинающий садовый
+									мастер Ланселот Браун. </p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:299px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5739.jpg" target="large5739img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5739small.jpg" alt="Стоу. Елисейские поля. Развалины Храма современной добродетели едва видны под слоем земли"
+														 width="299" height="200" border="0"></a></td>
+												<td style="width:190px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5740.jpg" target="large5740img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5740small.jpg" alt="Стоу. Храм Современной добродетели на гравюре середины XVIII века"
+														 width="190" height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:299px;">Стоу. Елисейские поля. Развалины Храма современной добродетели едва
+													видны под слоем земли</td>
+												<td style="font-size:10px;width:190px;">Стоу. Храм Современной добродетели на гравюре середины XVIII века</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Левее Храма некогда красовалась искусственная руина уродливой
+									архитектуры, а перед ней – статуя в современном камзоле и без головы.
+									"Храм Современной Добродетели" был сатирой Кобэма и его друзей на
+									политический курс премьер-министра Роберта Уолпола. Но потом шутка
+									перестала казаться смешной, и искусственная руина потихоньку
+									превратилась в естественную. <br>
+								</p>
+								<p></p>
+								<div coordinates=" [
+								-1.0142451524734497,
+								52.029587697256304
+							  ]">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5743.jpg" target="large5743img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5743small.jpg" alt="Стоу. Памятник Доблестным Британцам" width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Памятник Доблестным Британцам</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><br>
+								<p></p>
+								<p>Храм, созданный по проекту Кента, гармоничен и особенно украшает
+									пейзажную картину, если любоваться им с противоположной стороны
+									"Стикса". Лучший вид на него от странной подковы, которая называется
+									"Доблестные Британцы". Это даже не постройка, а большой постамент для
+									исторического и опять-таки политического пантеона, придуманного
+									коллективными авторами усадьбы. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5749.jpg" target="large5749img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5749small.jpg" alt="Стоу. Памятник Доблестным Британцам. На первом плане - Томас Грешэм, создатель Лондонской Биржи"
+														 width="597" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Памятник Доблестным Британцам. На первом плане - Томас Грешэм, создатель
+													Лондонской Биржи</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Кого здесь только нет! Королева Елизавета и ее сиятельные пираты
+									Рэйли и Дрейк, защитники Англии король Альфред и "Черный Принц" Эдуард,
+									философ Локк и физик Ньютон, драматург Шекспир и высоко ценимый
+									пейзажной эпохой поэт Милтон. А еще знакомый нам по скульптурному
+									изображению в Чизике архитектор Иниго Джонс и скромно, без надписи
+									(живой классик!), помещенный в боковой нише портрет Александера Поупа. <br>
+									<br>
+								</p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:167px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5744.jpg" target="large5744img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5744small.jpg" alt="Стоу. Памятник Доблестным Британцам. Король Альфред"
+														 width="167" height="250" border="0"></a></td>
+												<td style="width:200px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5745.jpg" target="large5745img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5745small.jpg" alt="Стоу. Памятник Доблестным Британцам. Надпись в честь короля Альфреда"
+														 width="200" height="134" border="0"></a></td>
+												<td style="width:167px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5746.jpg" target="large5746img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5746small.jpg" alt="Стоу. Памятник Доблестным Британцам. Иниго Джонс"
+														 width="167" height="250" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:167px;">Стоу. Памятник Доблестным Британцам. Король Альфред</td>
+												<td style="font-size:10px;width:200px;">Стоу. Памятник Доблестным Британцам. Надпись в честь короля
+													Альфреда</td>
+												<td style="font-size:10px;width:167px;">Стоу. Памятник Доблестным Британцам. Иниго Джонс</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Каждый бюст сопровождается красноречивым текстом. Особенно интересна
+									эпитафия Королю Альфреду: "Добрейший, справедливейший и милосерднейший
+									из королей; отбивший Датчан, охранивший Моря, поддержавший Познанье,
+									установивший Суды, сокрушивший Продажность, спасший Свободу, и ставший
+									Создателем Английской Конституции". Интересна еще и потому, что с этим
+									королем и схожей надписью мы встретились на следующий день в Стоурхеде. В
+									центре памятника помещены прекрасные латинские стихи, которые я перевел
+									так: <br>
+									<br>
+									<font color="#333399">Hic manus ob patriam pugnando vulnera passi, <br>
+										Quique pii vates, &amp; Phoebo digna locuti, <br>
+										Inventas aut qui vitam excoluere per artes, <br>
+										Quique sui memeores alios fecere merendo. <br>
+										<br>
+										Ратники здесь, что за родину раны сражений терпели, <br>
+										И божества песнопевцы, достойные спутники Феба, <br>
+										Новых создатели сил, что жизнь просветили искусством, <br>
+										Те, кто память свою в поколеньях иных заслужили.</font> <br>
+									<br>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:598px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5747.jpg" target="large5747img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5747small.jpg" alt="Стоу. Памятник Доблестным Британцам. Бюст Меркурия: К Елисейским ведет полям..."
+														 width="598" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Памятник Доблестным Британцам. Бюст Меркурия: К Елисейским ведет полям...</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>"Доблестные Британцы" – не просто постамент, а целый роман в камне. В
+									этом романе, как и во всей английской культуре, есть и возвышенные, и
+									смешные строки. Начну, пожалуй, с возвышенной темы – венчающей пирамидки
+									с бюстом Меркурия. Надпись под ним гласит: "К Елисейским ведет полям";
+									бог приводит великих людей Британии сюда, где живет античное
+									совершенство и древние герои. Об этом можно догадаться и без чтения –
+									так выразительно смотрят друг на друга два памятника. <br>
+									<br>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5748.jpg" target="large5748img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5748small.jpg" alt="Стоу. Памятник Доблестным Британцам. Эпитафия Синьору Фидо" width="268"
+														 height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Памятник Доблестным Британцам. Эпитафия Синьору Фидо</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>А вот если обойти постамент с тыла, можно получить легкий шок от
+									столкновения великого и смешного. В нише памятника помещена загадочная
+									эпитафия, в которой покойный расхваливается буквально до небес: <br>
+									<br>
+									<font color="#333399">Памяти <br>
+										СИНЬОРА ФИДО, <br>
+										Итальянца хорошего Рода; <br>
+										который прибыл в Англию <br>
+										не с тем, чтобы нас укусить, подобно многим его землякам, <br>
+										но дабы вести достойную Жизнь. <br>
+										Он не охотился за Славой, <br>
+										но имел ее; <br>
+										не считаясь с Похвалой Друзей, <br>
+										Был чувствителен к их Любви. <br>
+										Хотя он жил среди Великих, <br>
+										однако не научился ни Лести, ни Порокам... <br>
+									</font><br>
+									Только последние строчки рассеивают недоумение озадаченного посетителя. И вспоминается похожая надпись в
+									Раушеме: <br>
+									<br>
+									<font color="#333399">Читатель, <br>
+										сей Камень неповинен в Лести, <br>
+										ибо тот, кому он посвящен, <br>
+										был не Человек, <br>
+										а <br>
+										БОРЗАЯ.</font> <br>
+								</p>
+								<p><br>
+								</p>
+								<p></p>
+								<div osm_nd_id="1541362601">
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5751.jpg" target="large5751img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5751small.jpg" alt="Стоу. Елисейские поля. Колонна Гренвиля"
+														 width="268" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5752.jpg" target="large5752img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5752small.jpg" alt="Стоу. Елисейские поля. На вершине Колонны Гренвиля стоит Каллиопа, муза трагической поэзии"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:268px;">Стоу. Елисейские поля. Колонна Гренвиля</td>
+												<td style="font-size:10px;width:268px;">Стоу. Елисейские поля. На вершине Колонны Гренвиля стоит Каллиопа,
+													муза трагической поэзии</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>На Елисейских полях есть удивительное место – морской памятник
+									посреди пейзажного парка. На высоком откосе стоит хорошо видимая с воды
+									небольшая колонна, увенчанная женской статуей. Колонна ростральная,
+									потому что посвящена капитану Гренвилю, племяннику Кобэма, погибшему в
+									морском сражении. Она стоит над запрудой, которую чувствительные души
+									понимали как символ бескрайнего моря. Позже здесь установили еще один
+									морской памятник – постамент с глобусом, посвященный погибшему в южных
+									морях Джеймсу Куку. </p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:625px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5764.jpg" target="large5764img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5764small.jpg" alt="Колонна Гренвиля и Храм Согласия и Победы в Греческой долине. Гравюра из книги Джорджа Бикема Красоты Стоу (1750)"
+														 width="625" height="366" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Колонна Гренвиля и Храм Согласия и Победы в Греческой долине. Гравюра из книги
+													Джорджа Бикема Красоты Стоу (1750)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Этот замечательный уголок возник в Стоу не сразу. Виконт Кобэм
+									поставил Колонну в Греческой долине, неподалеку от античного храма,
+									вскоре после гибели Гренвиля в 1747 году. Его племянник, наследник и
+									тезка, граф Ричард Кобэм, в 1756 году перенес памятник своему брату к
+									воде "реки Стикс", и заменил статую Нептуна на изображение Каллиопы,
+									музы трагической поэзии. Теперь она глядит на Памятник Доблестным
+									британцам, разворачивая свиток с надписью "Лишь о великом пою". </p>
+								<p>&nbsp;</p>
+								<div osm_nd_id="1541361234">
+									<table style="margin:10px 10px 10px 10px;width:597px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5754.jpg" target="large5754img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5754small.jpg" alt="Стоу. Елисейские поля. Памятник Куку. 2010" width="597" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Елисейские поля. Памятник Куку. 2010</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>В 1778 году неподалеку появился&nbsp;памятник знаменитому географу и
+									путешественнику Джеймсу Куку. Опытнейший моряк, под командованием
+									которого служили и знакомый нам по&nbsp;Музею садоводства&nbsp;капита
+									Блай, он в то время совершал третье кругосветное
+									путешествие,&nbsp;вскоре закончившиееся&nbsp;трагически.&nbsp;Потом
+									Памятник Куку перенесли ближе к Колонне, и ассоциации с морским
+									мемориалом упрочились. В первый свой приезд в Стоу я видел стелу с
+									барельефоми надписью. Сейчас восстановлен первоначальный вид памятника,
+									увенчаннного большим глобусом.</p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:261px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5755.jpg" target="large5755img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5755small.jpg" alt="Стоу. Елисейские поля. Памятник Куку. 1996"
+														 width="261" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5756.jpg" target="large5756img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5756small.jpg" alt="Стоу. Елисейские поля. Памятник Куку. 2010"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:261px;">Стоу. Елисейские поля. Памятник Куку. 1996</td>
+												<td style="font-size:10px;width:268px;">Стоу. Елисейские поля. Памятник Куку. 2010</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Образ моря, созданный в Стоу, через несколько лет был повторен во
+									французском парке Меревиль – там Ростральная колонна и Памятник Куку
+									отражались в водах обширного озера. Ростральная колонна была посвящена
+									памяти сыновей владельца, также погибших во время морской экспедиции. </p>
+								<p>&nbsp;</p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:306px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5765.jpg" target="large5765img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5765small.jpg" alt="Ростральная колонна в Меревиле. Гравюра из книги Александра Лаборда Описание новых садов Франции (1808)"
+														 width="306" height="400" border="0"></a></td>
+												<td style="width:302px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5766.jpg" target="large5766img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5766small.jpg" alt="Памятник Куку в Меревиле. Гравюра из книги Александра Лаборда Описание новых садов Франции (1808)"
+														 width="302" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:306px;">Ростральная колонна в Меревиле. Гравюра из книги Александра Лаборда
+													Описание новых садов Франции (1808)</td>
+												<td style="font-size:10px;width:302px;">Памятник Куку в Меревиле. Гравюра из книги Александра Лаборда
+													Описание новых садов Франции (1808)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Гравюра с этой колонной, стоящей над широкой водной гладью, была
+									помещена в книге Александра Лаборда "Описание новых садов Франции и
+									старинных ее замков" (1808).&nbsp;Я пытался найти эти памятники, но
+									сначала потерпел неудачу: оказывается, парк Меревиля давно впал в
+									запустение, а украшения его проданы. Но однажды в июльском Париже&nbsp;я
+									развернул лист с рекламой садовых поездок и обнаружил ...ростральную
+									колонну и памятник Куку в парке некого Замка Жёрр. Поехал - и, о
+									радость! Именно туда они поступили из Меревиля в начале ХХ века. И вот
+									на этой странице мы можем сравнить памятники "французского Стоу" с их
+									оригиналами.</p>
+								<p>&nbsp;</p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:261px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5767.jpg" target="large5767img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5767small.jpg" alt="Ростральная колона из Меревиля. Шато де Жёр. Фото Б. Соколова. 1998"
+														 width="261" height="400" border="0"></a></td>
+												<td style="width:260px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5768.jpg" target="large5768img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5768small.jpg" alt="Памятник Куку из Меревиля. Шато де Жёр. Фото Б. Соколова. 1998"
+														 width="260" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:261px;">Ростральная колона из Меревиля. Шато де Жёр. Фото Б. Соколова. 1998</td>
+												<td style="font-size:10px;width:260px;">Памятник Куку из Меревиля. Шато де Жёр. Фото Б. Соколова. 1998</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Еще одна "дочка" Колонны Гренвиля украшает Царское Село. Читая книги и
+									рассматривая гравюры о парке Стоу дали пищу воображению Екатерины II.
+									Вот две страницы из иллюстрированных книг о Стоу, с которыми могла быть
+									знакома императрица:</p>
+								<p></p>
+								<div>
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:249px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5769.jpg" target="large5769img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5769small.jpg" alt="Колонна Гренвиля. Гравюра из книги Бентона Сили Виды храмов... в Стоу (1750)"
+														 width="249" height="400" border="0"></a></td>
+												<td style="width:229px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5770.jpg" target="large5770img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5770small.jpg" alt="Колонна Гренвиля и Греческий храм. Лист из книги Джорджа Бикема Красоты Стоу (1750)"
+														 width="229" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:249px;">Колонна Гренвиля. Гравюра из книги Бентона Сили Виды храмов... в
+													Стоу (1750)</td>
+												<td style="font-size:10px;width:229px;">Колонна Гренвиля и Греческий храм. Лист из книги Джорджа Бикема
+													Красоты Стоу (1750)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>&nbsp;Так посреди Большого озера возникла мощная Чесменская колонна,
+									повествующая не о гибели близких, а о державной победе над вражеским
+									флотом.</p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5771.jpg" target="large5771img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5771small.jpg" alt="Царское Село. Чесменская колонна. Фото Б. Соколова. 2010" width="268"
+														 height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Царское Село. Чесменская колонна. Фото Б. Соколова. 2010</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Колонна Гренвиля играет в парке еще одну важную роль. От нее ведет
+									пейзажный просвет, наискосок соединяющий фасад дворца и закрытую
+									деревьями долину Елисейских полей. Эта связующая виста очень
+									выразительна, и мы сразу обратили на нее внимание.</p>
+								<p></p>
+								<div coordinates=" [
+								-1.0165143013000488,
+								52.03101678318245
+							  ]">
+									<table align="center">
+										<tbody>
+											<tr>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5772.jpg" target="large5772img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5772small.jpg" alt="Стоу. Вид от доврца на Колонну Гренвиля"
+														 width="268" height="400" border="0"></a></td>
+												<td style="width:268px;"><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5773.jpg" target="large5773img"
+													 onclick="popup(this.href, 950, 700, this.target); return false;"><img src="Стоу/398-5773small.jpg" alt="Стоу. Елисейские поля. Вид на Колонну Гренвиля и портик дворца"
+														 width="268" height="400" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;width:268px;">Стоу. Вид от доврца на Колонну Гренвиля</td>
+												<td style="font-size:10px;width:268px;">Стоу. Елисейские поля. Вид на Колонну Гренвиля и портик дворца</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>Прежде чем покинуть Елисейские поля, я&nbsp;еще раз вспомнил умные,
+									поэтичные, злободневные надписи на его монументах.&nbsp;Предлагаю и вам
+									прочесть маленькие поэмы, которыми здесь почтили обладателей "древних
+									добродетелей":&nbsp;</p>
+								<p>
+									<font color="#333399"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Эпаминонд</strong></font>
+								</p>
+								<p>
+									<font color="#333399">
+										<font color="#000000"></font>
+									</font>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5757.jpg" target="large5757img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5757small.jpg" alt="Стоу. Храм Древних добродетелей. Эпаминонд" width="268" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних добродетелей. Эпаминонд</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<font color="#333399"><br>
+								</font>
+								<p></p>
+								<p>
+									<font color="#333399">Тот, через чью доблесть, скромность и умеренность <br>
+										Фиванская республика <br>
+										Вместе и вольность и началие, <br>
+										Также уставы, военный, гражданский, домашний, <br>
+										Получила; <br>
+										С чьим уходом потеряла.&nbsp;<br>
+										<br>
+										<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											Ликург</strong></font>
+								</p>
+								<p></p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5758.jpg" target="large5758img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5758small.jpg" alt="Стоу. Храм Древних добродетелей. Ликург" width="268" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних добродетелей. Ликург</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>
+									<font color="#333399">Тот, кто с величайшей мудростью создав законы, <br>
+										Наилучшим образом защитил их от порчи, <br>
+										Отец отечества, <br>
+										Незыблемую свободу <br>
+										И благословенные нравы, <br>
+										Изгнав корысть, роскошь и сластолюбие, <br>
+										На многие века <br>
+										Согражданам даровал.&nbsp;<br>
+										<br>
+										<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											Сократ</strong> </font>
+								</p>
+								<p>
+									<font color="#333399">
+										<font color="#000000"></font>
+									</font>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5759.jpg" target="large5759img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5759small.jpg" alt="Стоу. Храм Древних добродетелей. Сократ" width="268" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних добродетелей. Сократ</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<font color="#333399"><br>
+									<br>
+									Тот, кто в развратнейшем государстве остался чистым, <br>
+									Насадитель добра, служитель единого БОГА, <br>
+									От бесполезной праздности и тщетных прений <br>
+									К жизненному долгу и общественному благу <br>
+									Философию направил, <br>
+									Муж наимудрейший.&nbsp;<br>
+									<br>
+									<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										Гомер</strong> </font>
+								<p></p>
+								<p>
+									<font color="#333399">
+										<font color="#000000"></font>
+									</font>
+								</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:268px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5760.jpg" target="large5760img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5760small.jpg" alt="Стоу. Храм Древних добродетелей. Гомер" width="268" height="400"
+														 border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Храм Древних добродетелей. Гомер</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<font color="#333399"><br>
+									<br>
+									Тот, кто был первым поэтом, также и величайшим, <br>
+									Глашатай доблести, даритель бессмертья, <br>
+									В божественной песни <br>
+									К прекрасной отваге, к терпению в страданьях, <br>
+									Всеми прочтенный, всех побудил. <br>
+								</font>
+								<p></p>
+								<p><em>Бентон Сили. Описание садов виконта Кобэма в Стоу (1744) Перевод Б. Соколова</em></p>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
+								<div>
+									<table style="margin:10px 10px 10px 10px;width:134px;" align="center">
+										<tbody>
+											<tr>
+												<td><a href="http://www.gardenhistory.ru/photo.php?photo=pages/398-5761.jpg" target="large5761img" onclick="popup(this.href, 950, 700, this.target); return false;"><img
+														 src="Стоу/398-5761small.jpg" alt="Стоу. Путешествие продолжается: вид с Елисейских полей на Готический храм"
+														 width="134" height="200" border="0"></a></td>
+											</tr>
+											<tr>
+												<td style="font-size:10px;">Стоу. Путешествие продолжается: вид с Елисейских полей на Готический храм</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p></p>
+								<p>&nbsp;</p>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td style="background:#F8FCF5;" width="50">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="background:#F8FCF5;">
+					<div style="border-top:#99CF19 1px solid;padding-top:2px;">
+						<div style="border-top:#D4E69E 1px solid;padding:15px;">
+							<!--LiveInternet counter-->
+							<script type="text/javascript">document.write("<a href='http://www.liveinternet.ru/click' target=_blank><img src='http://counter.yadro.ru/hit?t14.1;r" + escape(document.referrer) + ((typeof (screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";i" + escape("Жж" + document.title.substring(0, 80)) + ";" + Math.random() + "' border=0 width=88 height=31 alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня' align='left'><\/a>")</script><a
+							 href="http://www.liveinternet.ru/click" target="_blank"><img src="Стоу/hit" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня"
+								 style="display: none !important;" width="88" hidden="" height="31" border="0" align="left"></a>
+							<!--/LiveInternet-->
+							© Б.М. Соколов - концепция; авторы - тексты и фото, 2008-2019. Все права защищены.<br>
+							При использовании материалов активная ссылка на www.gardenhistory.ru обязательна. </div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+<script language="javascript">	
+	div = document.getElementById('album1');
+	div.GA = new geoAlbum(div, {
+		groupMapZ: JSON.parse( div.getAttribute('groupMapZoom')),
+		imageMapZ: JSON.parse( div.getAttribute('imageMapZoom')),	
+		functionImgH : function (div) {
+			var n = div.getElementsByTagName('table')[0];
+			n = n.getElementsByTagName('tbody')[0];
+			n = n.getElementsByTagName('tr')[1];
+			var n = n.getElementsByTagName('td')[0];
+			return n.textContent;
+			},
+		imageMapProvider : ['Esri.WorldImagery', 'OpenTopoMap', 'OpenStreetMap.Mapnik'],
+		imageMapName : ['Снимки от Esri', 'Топографическая карта', 'ОСМ/Мапник'],
+		contur: {
+			osm_relation_id : 9285014,
+			title : "Ландшафтные сады Стоу",
+			color : "#F2872F",
+			subAreas : true,
+			subAreasColor: "#99CF19"
+			},
+		routeStyle : {color: '#80ffff', opacity: 0.5},
+		locale : {
+			prevText : '&larr; Предыдущее',
+			nextText : 'Следующее &rarr;',
+			imIndices : 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ'
+			}
+		}
+	);
+	document.onkeydown = function (e) {
+		var GA = document.getElementById('album1').GA;
+		if (e.which == 39)
+			GA.focusGroup(GA.geoDivIdx + 1);
+		if (e.which == 37)
+			GA.focusGroup(GA.geoDivIdx - 1);
+		// location.hash = GA.geoDivIdx+1;
+	}
+</script>
+</html>

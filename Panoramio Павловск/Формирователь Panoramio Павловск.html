@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ImageGeoLink</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		@page {
+			margin: 2cm
+		}
+
+		img.photo {
+			border: 4;
+			width: 500px;
+			image-orientation: from-image;
+		}
+
+		.existgeo {
+			font-size: 70%;
+		}
+	</style>
+	<script src="js/geoexif.js"></script>
+</head>
+
+<body>
+	<div id="photos" style="    height: 94vh;
+    width: 50%;
+	overflow-y: scroll;
+	border: 4px #ddd solid;
+    box-shadow: 0 0 3px 3px #ccc;
+    float: left;
+	padding-bottom: 15px;">
+		<p>Fotos!</p>
+	</div>
+	<script>
+		/**
+	 * Заявки на использование внешних ресурсов
+	 * @param {*} code - код ресурса для диагностики
+	 * @param {*} URI - адрес ресурса
+	 * @param {*} retf - функция успешного завершения
+	 * @param {*} context - передаваемый связанный объект
+	 * @param {*} type - тип ресурса
+	 */
+		function IO_xhr(code, URI, retf, context, type = 'application/xml') {
+			IO_xhr.status[code] = false;
+			var req = new XMLHttpRequest();
+			req.overrideMimeType(type);
+			req._context = context;
+			req._retf = retf;
+			req._code = code;
+			req.open('GET', URI, true);
+			req.addEventListener('load', function (req) {
+				var code = req.currentTarget._code;
+				IO_xhr.status[code] = true;
+				if (req.currentTarget.status != 200) {
+					// обработать ошибку
+					alert('' + '\n' + req.currentTarget.status + ': ' + req.currentTarget.statusText);
+				} else {
+					var c = req.currentTarget._context;
+					console.log(code + " ✔")
+					retf({
+						req: req,
+						context: c
+					});
+				}
+			}
+			);
+			req.send(null);
+		}
+		IO_xhr.status = {};
+
+		/**
+		 * Выгрузка данных пользователю
+		 * @param {*} data - массив для выгрузки
+		 * @param {*} filename - предполагаемое название файла
+		 * @param {*} type - тип данных
+		 */
+		function IO_export(data, filename, type) {
+			var file = new Blob([data], { type: type });
+
+			var a = document.createElement("a"),
+				url = URL.createObjectURL(file);
+			a.href = url;
+			a.download = filename;
+			document.body.appendChild(a);
+			a.click();
+			setTimeout(function () {
+				document.body.removeChild(a);
+				window.URL.revokeObjectURL(url);
+			}, 0);
+		}
+		var geoexif = null;
+		var ip = 0;
+		var panobj = [];
+
+		function createGeoExif(ret) {
+			var Pan_DB = JSON.parse(ret.req.currentTarget.responseText);
+			for (var i in Pan_DB) {
+				var o = Pan_DB[i];
+				var URL = o.photo_file_url.replace('small', 'medium').replace('http://mw2.google.com/mw-panoramio/photos/medium/', '');
+				var div = document.createElement('div');
+				div.setAttribute('lon', o.longitude);
+				div.setAttribute('lat', o.latitude);
+				var au = document.createElement('p');
+				au.innerText = o.owner_name + ' (' + o.upload_date + ')';
+				au.class = 'autor';
+				var n = document.createElement('p');
+				n.innerText = o.photo_title;
+				var a = document.createElement('a');
+				a.href = URL
+				var img = document.createElement('img');
+				img._h = o.height;
+				img._w = o.width;
+				img.src = URL;
+				a.appendChild(img);
+				div.appendChild(a);
+				div.appendChild(au);
+				div.appendChild(n);
+				document.getElementById('photos').appendChild(div);
+
+			}
+			IO_export(document.getElementById('photos').outerHTML, 'pan.html', 'application/json');
+		}
+		IO_xhr('geoExifFiles', 'Panoramio Павловск.json', createGeoExif, this, 'application/json');
+	</script>
+</body>
+
+</html>
