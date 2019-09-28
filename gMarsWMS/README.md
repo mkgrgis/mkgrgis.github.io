@@ -3,12 +3,8 @@ Simple HTML/javascript Leaflet.js map of Mars from Google with official Union As
 
 Just academic Proof-of-Concept Prototype, NOT LICENSED by the WMS provider - Google.
 
-<img src="https://mkgrgis.github.io/mkgrgis/gMarsWMS/gMarsWMS_demo.png"/>
-
-Demo http://mkgrgis.github.io/mkgrgis/gMarsWMS/gMarsMap.html
-
 # Usage
-Download and see gMarsMap.html
+Download and see index.html
 
 # Dependences
 Depends on some files from https://github.com/mkgrgis/OpenPlanetWMS
