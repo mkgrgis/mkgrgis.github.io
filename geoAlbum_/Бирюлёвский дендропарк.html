@@ -51,9 +51,9 @@
 		// Загрузка фотографий из облака по наведению мыши
 		function imgLoaded(img) {
 			img = img.currentTarget;
-			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "geoAlbum0")
+			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "alb0")
 				img.src = 'https://cloclo3.datacloudmail.ru/weblink/thumb/xw1/4nCW/YmUMdE1RG' + '/' + img.getAttribute('data-src');
-			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "geoAlbum1")
+			if (img.parentNode.parentNode.parentNode.parentNode.parentNode.id == "alb1")
 				img.src = 'https://cloclo3.datacloudmail.ru/weblink/thumb/xw1/9uoA/s5Du3c5LA' + '/' + img.getAttribute('data-src');
 			var pn = img.parentNode;
 			if (pn.nodeName == "A" && !pn.getAttribute('href'))
@@ -66,7 +66,7 @@
 	<p>Демонстрация возможностей открытой и свободной <a href="https://github.com/mkgrgis/geoAlbum">программы
 "Географический альбом"</a>, размещённой по адресу <a href="https://github.com/mkgrgis/geoAlbum">https://github.com/mkgrgis/geoAlbum</a></p>
 	<h1>Первый маршрут по Бирюлёвскому Дендропарку (2016 г.)</h1>
-	<div id="geoAlbum0" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
+	<div id="alb0" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
 		<div>1
 			<h1>Бирюлёвский дендропарк - шедевр советского паркостроения</h1>
 			<p>
@@ -306,7 +306,7 @@
 
 	</div>
 	<h1>Второй маршрут по Бирюлёвскому Дендропарку</h1>
-	<div id="geoAlbum1" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
+	<div id="alb1" groupMapZoom='{"ini" : "15", "min" : "8", "max" : "16" }' imageMapZoom='{"ini" : "17", "min" : "15", "max" : "21" }'>
 		<div>1
 			<h2>Дендропарк</h2>
 			<p>
@@ -665,7 +665,7 @@
 			);
 		}
 
-		var a0 = document.getElementById('geoAlbum0');
+		var a0 = document.getElementById('alb0');
 		autoProcessImg(a0);
 		a0.GA = new geoAlbum(a0, {
 			groupMapZ: JSON.parse( a0.getAttribute('groupMapZoom')),
@@ -704,7 +704,7 @@
 			passiveImageColor : 'grey'
 		}
 		);	// Альбом 0 объявлен	
-		var a1 = document.getElementById('geoAlbum1');
+		var a1 = document.getElementById('alb1');
 		autoProcessImg(a1);
 		a1.GA = new geoAlbum(a1, {
 			groupMapZ: JSON.parse( a1.getAttribute('groupMapZoom')),
@@ -731,7 +731,7 @@
 		);	// Альбом 1 объявлен
 
 		document.onkeydown = function (e) { // Клавиатурой управляется только альбом 0
-			var GA = document.getElementById('geoAlbum0').GA;
+			var GA = document.getElementById('alb0').GA;
 			if (e.which == 39)
 				GA.focusGroup(GA.geoDivIdx + 1);
 			if (e.which == 37)
