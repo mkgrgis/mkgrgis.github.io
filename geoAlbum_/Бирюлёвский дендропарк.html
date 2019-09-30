@@ -34,7 +34,7 @@
 					shadowUrl: ''
 				}
 			});
-		marsch1.bindPopup(marsch1._info.desc ? detailLayer._info.desc : 'Маршрут 1-й фотопрогулки по Дендропарку')
+		marsch1.bindTooltip(marsch1._info.desc ? detailLayer._info.desc : 'Маршрут 1-й фотопрогулки по Дендропарку')
 
 		marsch2 = new L.GPX(
 			'Бирюлёвский дендропарк 2-й проход.gpx', 
@@ -46,7 +46,7 @@
 					shadowUrl: ''
 				}
 			});
-		marsch2.bindPopup(marsch2._info.desc ? detailLayer._info.desc : 'Маршрут 2-й фотопрогулки по Дендропарку')
+		marsch2.bindTooltip(marsch2._info.desc ? detailLayer._info.desc : 'Маршрут 2-й фотопрогулки по Дендропарку')
 
 		// Загрузка фотографий из облака по наведению мыши
 		function imgLoaded(img) {
