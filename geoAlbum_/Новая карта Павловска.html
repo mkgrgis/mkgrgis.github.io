@@ -464,7 +464,7 @@
         Control.addBaseLayer(bl_MapBox, "MapBox"); */
         
         var dtxt = document.getElementById('data');
-        var geo_obj = JSON.parse(dtxt).innerHTML;
+        var geo_obj = JSON.parse(dtxt).innerText;
         
         for (var i_ in geo_obj) {
             var obj = geo_obj[i_];
