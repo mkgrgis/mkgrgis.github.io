@@ -92,8 +92,8 @@
                 });
         Control.addBaseLayer(bl_MapBox, "MapBox"); */
         
-        var dtxt = document.getElementById('data').innerHTML;
-        var geo_obj = JSON.parse(dtxt);
+        var dtxt = document.getElementById('data');
+        var geo_obj = JSON.parse(dtxt).innerHTML;
         
         for (var i_ in geo_obj) {
             var obj = geo_obj[i_];
