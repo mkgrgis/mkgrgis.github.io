@@ -91,8 +91,9 @@
                 id: 'mapbox.streets'
                 });
         Control.addBaseLayer(bl_MapBox, "MapBox"); */
-
-        var geo_obj = JSON.parse(document.getElementById('data').innerHTML);
+        
+        var dtxt = document.getElementById('data').innerHTML;
+        var geo_obj = JSON.parse(dtxt);
         
         for (var i_ in geo_obj) {
             var obj = geo_obj[i_];
