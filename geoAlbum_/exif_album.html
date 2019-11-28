@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Просмотр загруженных фотографий в рамках территориального полигона</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="js/leaflet.css" />
+	<style>
+		table[role=expl] {
+			border-collapse: collapse;
+			/* Убираем двойные линии между ячейками */
+		}
+		td[role=expl],
+		th[role=expl] {
+			padding: 3px;
+			/* Поля вокруг содержимого таблицы */
+			border: 1px solid black;
+			/* Параметры рамки */
+		}
+		th[role=expl] {
+			background: #b0e0e6;
+			/* Цвет фона */
+		}
+		th[role=expl] {
+			position: sticky;
+			top: 0;
+		}
+		table {
+			border-collapse: collapse;
+			/* Убираем двойные линии между ячейками */
+		}
+		td,
+		th {
+			padding: 3px;
+			/* Поля вокруг содержимого таблицы */
+			border: 1px solid black;
+			/* Параметры рамки */
+		}
+		th {
+			background: #b0e6b0;
+			/* Цвет фона */
+		}
+	</style>
+	<script src="js/leaflet.js"></script>
+	<script src="js/osmtogeojson.js"></script>
+	<script src="js/leaflet-providers.js"></script>
+	<script src="explication.js"></script>	
+</head>
+
+<body>
+  <p></p>
+  <div>
+    <input type="file" name="uploaded_file" id="uploaded_file"
+    onchange="file_selected();" accept="image/*,image/jpeg" />
+    </div>
+  <div id="gA" groupMapZoom='{"ini" : "14", "min" : "8", "max" : "15" }' imageMapZoom='{"ini" : "16", "min" : "15", "max" : "20" }'>
+<div>
+	<h2>Загруженные фото</h2>
+</div>
+	<p id="No"></p>
+	<p id="note"></p>
+	<script language="javascript">
+		 // Обработка выбранного файла
+function file_selected() {
+  try {
+    var file = document.getElementById('uploaded_file').files[0];
+    if (file) {
+      // Предварительная проверка на JPEG
+      if (/\.(jpe?g)$/i.test(file.name)) {
+        // Старые версии Firefox 3.6 - 7.0
+        if (typeof file.getAsBinary=='function') {
+          // Содержимое файла находится в file.getAsBinary()
+          // -- вызвать парсер
+        }
+        else if (typeof file.getAsDataURL=='function') {
+          // Содержимое файла находится в file.getAsDataURL()
+          // в виде закодированной base64 строки
+          // -- декодировать и вызвать парсер
+        }
+        // Браузеры с поддержкой HTML5
+        else {
+          if (typeof FileReader!='undefined') {
+            var reader = new FileReader();
+ 
+            reader.onloadend = function(evt) {
+              if (evt.target.readyState == FileReader.DONE) {
+                // Данные пришли в base64
+                if (evt.target.result.substr(0,5)=='data:') {
+                  // Содержимое файла находится в evt.target.result
+                  // в виде закодированной base64 строки
+                  // -- декодировать и вызвать парсер
+                }
+                // Двоичные данные
+                else {
+                  // Содержимое файла находится в evt.target.result
+                  // -- вызвать парсер
+                }
+              }
+            };
+ 
+            var blob;
+            if (file.slice) {
+              blob = file.slice(0, file.size);
+            }
+            else if (file.webkitSlice) {
+              blob = file.webkitSlice(0, file.size);
+            }
+            else if (file.mozSlice) {
+              blob = file.mozSlice(0, file.size);
+            }
+ 
+            // Если поддерживается бинарное чтение, то использовать его
+            if (typeof file.getAsBinary=='function') {
+              reader.readAsBinaryString(blob);
+            }
+            // Использовать чтение в base64
+            else {
+              reader.readAsDataURL(blob);
+            }
+          }
+        }
+      }
+    }
+  }
+  catch(e) {
+    // Браузер не поддерживает работу с содержимым файлов
+  }
+} 
+
+		window.addEventListener('hashchange', function (event) {
+			hashChange();
+		});
+		hashChange();
+		
+		var filter = null;
+		// Срабатывает при изменении адреса
+		function hashChange () {
+		var el = decodeURI(location.hash).replace('#', '').split(';');
+		if (el[0])
+			start_expl_process(el[0]);
+		}
+		function gLayer(l) {	
+			return L.tileLayer(
+				'http://{s}.google.com/vt/lyrs=' + l + '&x={x}&y={y}&z={z}',
+				{
+					maxZoom: 20,
+					subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+				}
+			);
+		}
+	
+			var geoJsonGeneral = osmtogeojson(xml);
+			var участки = [];
+			for (var i in osm_id_участки) {
+				var id = osm_id_участки[i];
+				var n = geoAlb_lib.relationSelfPolygon(geoJsonGeneral, id);
+				участки.push(geoJsonGeneral.features[n]);
+			}
+			log('Участки выделены ');
+			geoJsonGeneral.osm_relation_id = xhr.osm_relation_id;
+			var el = decodeURI(location.hash).replace('#', '').split(';');
+			var filter = el[1] ? el[1] : null;
+			document.getElementById('filter').innerText = filter;
+			explication.osm.function_general(
+				geoJsonGeneral,
+				участки,
+				[
+					'Esri.WorldImagery',
+					'OpenTopoMap',
+					'OpenStreetMap.Mapnik',
+					gLayer('s'),
+					L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+						{ maxZoom: 28, attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>', id: 'mapbox.streets' }),
+					L.tileLayer('https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg',
+						{ maxZoom: 18, attribution: '1942,&copy; <a href="http://warfly.ru/">вермахт</a>', id: 'WWII1942.aero' }),
+				/*	L.tileLayer('http://www.retromap.ru/tiles/r/5/061942/Z{z}/{y}/{x}.jpg',
+						{ maxZoom: 18, attribution: '1942,&copy;<a href="http://retromap.ru/">вермахт</a>', id: 'Retromap1942.aero' }),
+					L.tileLayer('http://www.retromap.ru/tiles/r/5/051952/Z{z}/{y}/{x}.jpg',
+						{ maxZoom: 18, attribution: '1952, &copy; </a>', id: '1952.geo' }),*/
+					gLayer('y'),
+					gLayer('p')
+				],
+				[						 
+					'Снимки от Esri', 
+					'Топографическая карта', 
+					'ОСМ/Мапник', 
+					'Спутник Google',  
+					'MapBox',
+					'Аэрофото 1942 г.', 
+				/*	'Аэрофото 1942 г.', 
+					'Москва 1952 г.',*/
+					'Карта google', 
+					'Гибрид google',
+				],
+				filter
+			);
+		}		
+	</script>
+</body>
+
+</html>
