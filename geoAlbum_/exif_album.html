@@ -55,7 +55,7 @@
     max-height: 99%;
 }
 	</style>
-	<link rel="stylesheet" href="js/leaflet.css" />
+	<link rel="stylesheet" href="../geoAlbum/js/leaflet.css" />
 	<script src="../geoAlbum/js/leaflet.js"></script>
 	<script src="../geoAlbum/js/leaflet-providers.js"></script>
 	<script src="../geoAlbum/js/osmtogeojson.js"></script>
@@ -91,18 +91,17 @@
 						
 						var img = document.createElement('img');
 						img.src = e.target.result;
-						img.setAttribute('class', 'h_foto');
-						console.log(e.target.f.name);
+						img.setAttribute('class', 'h_foto');						
 						var div = document.createElement('div');
 						div.appendChild(img);
 						document.getElementById('img1').append(div);
 						i_img--;
-						console.log(i_img);
+						//console.log(e.target.f.name);	console.log(i_img);
 						if (i_img == 0)
 							start_geoAlbum();
 					};
 					i_img++;
-					console.log(i_img);
+					// console.log(i_img);
 					fr.readAsDataURL(fr.f);
 				};
 			}
@@ -178,7 +177,7 @@
 					}
 				}
 				);
-				console.log('gA constr');
+				// console.log('gA constr');
 			}
 
 			document.onkeydown = function (e) {
