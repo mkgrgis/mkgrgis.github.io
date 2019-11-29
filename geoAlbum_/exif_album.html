@@ -181,12 +181,11 @@
 			}
 
 			document.onkeydown = function (e) {
-				var GA = document.getElementById('album1').GA;
+				var GA = document.getElementById('gA').GA;
 				if (e.which == 39)
 					GA.focusGroup(GA.geoDivIdx + 1);
 				if (e.which == 37)
 					GA.focusGroup(GA.geoDivIdx - 1);
-				// location.hash = GA.geoDivIdx+1;
 			}
 /*
 			var geoJsonGeneral = osmtogeojson(xml);
