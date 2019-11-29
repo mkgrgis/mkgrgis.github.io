@@ -71,7 +71,7 @@
 	</div>
 	<div id="gA" groupMapZoom='{"ini" : "14", "min" : "8", "max" : "15" }' imageMapZoom='{"ini" : "16", "min" : "15", "max" : "20" }'>
 		<div  id="img1">				
-				<h3>Загруженные фото</h3>				
+			<h3>Загруженные фото</h3>				
 		</div>
 	</div>		
 	<p id="No"></p>
@@ -88,16 +88,21 @@
 					var fr = new FileReader();
 					fr.f = f;
 					fr.onload = function (e) {
+						
 						var img = document.createElement('img');
 						img.src = e.target.result;
 						img.setAttribute('class', 'h_foto');
 						console.log(e.target.f.name);
-						document.getElementById('img1').append(img);
+						var div = document.createElement('div');
+						div.appendChild(img);
+						document.getElementById('img1').append(div);
 						i_img--;
+						console.log(i_img);
 						if (i_img == 0)
 							start_geoAlbum();
 					};
 					i_img++;
+					console.log(i_img);
 					fr.readAsDataURL(fr.f);
 				};
 			}
@@ -106,8 +111,7 @@
 				hashChange();
 			});
 			hashChange();
-
-			var filter = null;
+			
 			// Срабатывает при изменении адреса
 			function hashChange() {
 				/* var ;
@@ -125,9 +129,7 @@
 			}
 
 			function start_geoAlbum() {
-
-
-				div = document.getElementById('gA');
+				var div = document.getElementById('gA');
 				div.GA = new geoAlbum(div, {
 					exif_geo: true,
 					groupMapZ: JSON.parse(div.getAttribute('groupMapZoom')),
@@ -176,6 +178,7 @@
 					}
 				}
 				);
+				console.log('gA constr');
 			}
 
 			document.onkeydown = function (e) {
