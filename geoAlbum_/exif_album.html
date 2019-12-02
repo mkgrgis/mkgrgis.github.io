@@ -131,6 +131,10 @@
 				var div = document.getElementById('gA');
 				div.GA = new geoAlbum(div, {
 					exif_geo: true,
+					exif: {
+						DateTimeOriginal: true,
+						Artist: true
+					},
 					groupMapZ: JSON.parse(div.getAttribute('groupMapZoom')),
 					imageMapZ: JSON.parse(div.getAttribute('imageMapZoom')),
 					functionImgH: function (div) {
@@ -173,7 +177,8 @@
 					locale: {
 						prevText: '&larr; ',//Предыдущее
 						nextText: ' &rarr;', // Следующее
-						imIndices: 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ'
+						imIndices: 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЫ',
+						exif_Artist: 'Фотограф'
 					}
 				}
 				);
