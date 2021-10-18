@@ -6129,8 +6129,25 @@
 				var n = div.getElementsByTagName('h1')[0];
 				return n.textContent;
 			},
-			imageMapProvider: ['Esri.WorldImagery', 'OpenTopoMap', 'OpenStreetMap.Mapnik'],
-			imageMapName: ['Снимки от Esri', 'Топографическая карта', 'ОСМ/Мапник'],
+			imageMapProvider: [
+				'Esri.WorldImagery',
+				'OpenTopoMap',
+				'OpenStreetMap.Mapnik',
+				L.tileLayer('https://tiles.openaerialmap.org/5fac302c3729bf000552677e/0/5fac302c3729bf000552677f/{z}/{x}/{y}',
+					    { maxZoom: 22,
+					     attribution: '&copy; Сергей Астахов, нормаль аэрортофото Павловского Парка',
+					     id: 'pavlovsc_2020_aero_norm' }),
+				L.tileLayer('https://tiles.openaerialmap.org/5fac2fcd3729bf000552677c/0/5fac2fcd3729bf000552677d/{z}/{x}/{y}',
+					    { maxZoom: 24,
+					     attribution: '&copy; Сергей Астахов, оригинал аэрортофото Павловского Парка', id: 'pavlovsc_2020_aero_or' })
+			],
+			imageMapName: [
+				'Снимки от Esri',
+				'Топографическая карта',
+				'ОСМ/Мапник',
+				'Нормализ. аэроротофото Павловского парка 2020 г.',
+				'Оригинальное аэроротофото Павловского парка 2020 г.'
+			],
 			contur: {
 				osm_relation_id: 1721131,
 				title: "Павловский парк",
