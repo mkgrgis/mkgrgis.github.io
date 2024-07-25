@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script type="text/javascript">
-        //  Создание карты в leaflet
+        //  Создание карты в Leaflet
         var geoMap = L.map('map_Pavlovsk', { scrollWheelZoom: false }).setView([59.6897, 30.4582], 15);
         Control = new L.Control.Layers(null, null, { collapsed: false });
         geoMap.addControl(Control);
@@ -42,13 +42,23 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &amp; USGS'
         });
         Control.addBaseLayer(MtbMap, "Mtb - карта пешехода");
+        /*
+        var Stadia_StamenToner = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
+	        minZoom: 0,
+	        maxZoom: 20,
+	        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	        ext: 'png'
+        });        
+        Control.addBaseLayer(Stadia_StamenToner, "Ч/б карта Stamen");
         // Карта викимедия
-        var Wikimedia = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
+        var Wikimedia = L.tileLayer('https://maps.wikimedia.org/{mapstyle}/{z}/{x}/{y}{r}.{filetype}?lang={lang}', {
             attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
             minZoom: 1,
-            maxZoom: 19
-        });
-        Control.addBaseLayer(Wikimedia, "Карта Викимедия (Википедии)");
+            maxZoom: 19,
+            lang: "ru",
+            mapstyle:"osm"            
+        }); // https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png
+        Control.addBaseLayer(Wikimedia, "Карта Викимедия (Википедии)");*/
         // Ландшафтная карта
         var Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
             attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -56,40 +66,12 @@
             maxZoom: 22
         });
         Control.addBaseLayer(Thunderforest_Landscape, "Ландшафтная карта");
-        // Карта для ориентирования
-        var Orient1 = L.tileLayer('https://tiler5.oobrien.com/oterrain_global/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://oomap.co.uk">OOMAP</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 22
-        });
-        Control.addBaseLayer(Orient1, "Карта для ориентирования");
-        
-        // Карта Сканэкс 1
-        var OsmSp1 = L.tileLayer('http://tilessputnik.ru/{z}/{x}/{y}.png', {
-            attribution: '<a target="_blank" href="http://kosmosnimki.ru/terms.html" style="" class="">© 2007-2019 RDC ScanEx</a> - Terms of Service<br><a target="_blank" href="http://maps.sputnik.ru">Спутник</a> © Ростелеком | © <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a><br><a target="_blank" href="http://leafletjs.com">© Leaflet</a>',
-            maxZoom: 22
-        });
-        Control.addBaseLayer(OsmSp1, "ScanEx карта 1");
-        
         // Карта Сканэкс 2
         var OsmSp2 = L.tileLayer('https://{s}tilecart.kosmosnimki.ru/kosmo/{z}/{x}/{y}.png', {
             attribution: '<a target="_blank" href="http://kosmosnimki.ru/terms.html" style="" class="">© 2007-2019 RDC ScanEx</a> - Terms of Service<br><a target="_blank" href="http://maps.sputnik.ru">Спутник</a> © Ростелеком | © <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a><br><a target="_blank" href="http://leafletjs.com">© Leaflet</a>',
             maxZoom: 22
         });
-        Control.addBaseLayer(OsmSp2, "ScanEx карта 2");
-        
-        /*
-        var Orient = L.tileLayer('https://tiler5.oobrien.com/streeto_global/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://oomap.co.uk">OOMAP</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',		
-            maxZoom: 22
-        });  
-        Control.addBaseLayer(Orient, "Карта для ориентирования с упрощениями");    	
-        // Карта от MapBox - в Павлвоске неудачная
-        var bl_MapBox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',	{
-                maxZoom: 28,
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +	'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                id: 'mapbox.streets'
-                });
-        Control.addBaseLayer(bl_MapBox, "MapBox"); */        
+        Control.addBaseLayer(OsmSp2, "ScanEx устаревшая карта");
        
         var geo_obj = [
             {
@@ -479,5 +461,4 @@
         }
     </script>
 </body>
-
 </html>
